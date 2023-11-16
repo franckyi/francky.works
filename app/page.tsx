@@ -1,5 +1,6 @@
 // import Image from "next/image";
 import AppBar from "./components/AppBar";
+import Hero from "./components/Hero";
 import WorkList from "./components/WorkList/WorkList";
 
 const introText =
@@ -9,8 +10,9 @@ export default function Home() {
   return (
     <main className="min-h-screen px-24 pt-4 bg-slate-900">
       <AppBar />
-      <p className="text-lg dark:text-slate-300">{introText}</p>
-      <h2 className="text-4xl font-bold text-emerald-400 mt-8 mb-16 text-center">
+      <p className="w-3/4 mx-auto text-lg dark:text-slate-300">{introText}</p>
+      <Hero />
+      <h2 className="text-5xl font-bold text-emerald-400 my-16 text-center">
         Moje realizacje
       </h2>
       <WorkList />

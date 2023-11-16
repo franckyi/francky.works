@@ -3,7 +3,7 @@ import IWork from "@/app/types/IWork";
 
 export default function WorkItem({ work }: IWork) {
   return (
-    <article className="mb-24 flex gap-8 rounded-sm saturate-100">
+    <article className="my-24 flex gap-8 rounded-sm saturate-100">
       <Image
         src={work.imgUrl}
         alt={work.title}
@@ -63,7 +63,7 @@ export default function WorkItem({ work }: IWork) {
         {work.liveUrl && (
           <a
             href={work.liveUrl}
-            className="py-2 px-4 text-slate-900 font-bold bg-emerald-400 hover:bg-emerald-500 rounded-full hover:rotate-6"
+            className="py-2 px-4 text-slate-900 font-bold bg-emerald-400 hover:bg-amber-400 rounded-full hover:rotate-6 transition ease-in-out duration-150 hover:rounded-sm"
             target="_blank"
             rel="nofollow noopener noreferrer"
           >
@@ -74,7 +74,7 @@ export default function WorkItem({ work }: IWork) {
         {work.gitUrl && (
           <a
             href={work.gitUrl}
-            className="ml-4 py-2 px-4 text-slate-900 font-bold bg-emerald-400 hover:bg-emerald-500 rounded-full hover:rotate-6"
+            className="ml-4 py-2 px-4 text-slate-900 font-bold bg-emerald-400 hover:bg-amber-400 rounded-full hover:rotate-6 transition ease-in-out duration-150 hover:rounded-sm"
             target="_blank"
             rel="nofollow noopener noreferrer"
           >
@@ -85,7 +85,7 @@ export default function WorkItem({ work }: IWork) {
         {work.designUrl && (
           <a
             href={work.designUrl}
-            className="ml-4 py-2 px-4 text-slate-900 font-bold bg-emerald-400 hover:bg-emerald-500 rounded-full hover:rotate-6"
+            className="ml-4 py-2 px-4 text-slate-900 font-bold bg-emerald-400 hover:bg-amber-400 rounded-full hover:rotate-6 transition ease-in-out duration-150 hover:rounded-sm"
             target="_blank"
             rel="nofollow noopener noreferrer"
           >
