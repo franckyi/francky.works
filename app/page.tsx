@@ -9,21 +9,18 @@ const introText =
 
 export default function Home() {
   return (
-    <>
-      <main className="px-24 py-4 bg-slate-900">
-        <section className="min-h-screen">
-          <AppBar />
-          <p className="w-3/4 mx-auto text-lg dark:text-slate-300">
-            {introText}
-          </p>
-          <Hero />
-        </section>
-        <h2 className="text-5xl my-24 font-bold text-emerald-400 my-16 text-center">
-          Moje realizacje
-        </h2>
-        <WorkList />
-      </main>
-      <Footer />
-    </>
+    <main className="p-4 bg-slate-900">
+      <section className="lg:min-h-screen">
+        <AppBar />
+        <p className="lg:w-3/4 mx-auto text-lg dark:text-slate-300">
+          {introText}
+        </p>
+        <Hero />
+      </section>
+      <h2 className="my-12 lg:my-16 text-5xl font-bold text-emerald-400 text-center">
+        Moje realizacje
+      </h2>
+      <WorkList />
+    </main>
   );
 }
