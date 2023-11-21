@@ -1,7 +1,11 @@
 import Image from "next/image";
 import IWork from "@/app/types/IWork";
 
-export default function WorkItem({ work }: IWork) {
+interface IWorkItemProps {
+  work: IWork;
+}
+
+export default function WorkItem({ work }: IWorkItemProps) {
   return (
     <article className="my-12 lg:my-24 lg:flex lg:items-center gap-8 rounded-sm saturate-100">
       <Image
