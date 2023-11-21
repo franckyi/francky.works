@@ -36,9 +36,12 @@ export default function WorkItem({ work }: IWorkItemProps) {
             <h4 className="my-4 lg:inline lg:mr-4 font-semibold text-emerald-400 text-xs lg:text-lg">
               Moja rola
             </h4>
-            {work.myRole.map((role, index) => {
+            {work.myRole.map((role: string, index: number) => {
               return (
-                <span className="my-1 lg:inline-block mr-2 lg:mr-4 px-4 pt-1 pb-2 bg-slate-800 text-xs lg:text-sm text-slate-200 capitalize">
+                <span
+                  className="my-1 lg:inline-block mr-2 lg:mr-4 px-4 pt-1 pb-2 bg-slate-800 text-xs lg:text-sm text-slate-200 capitalize"
+                  key={index}
+                >
                   {role}
                 </span>
               );
