@@ -24,7 +24,7 @@ export default function AppBar() {
   return (
     <nav className="flex w-full justify-between mb-12">
       <Image
-        className="relative"
+        className="lg:ml-4"
         src="/logo-dark.svg"
         alt="Francky Logo"
         width={120}

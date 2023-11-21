@@ -1,6 +1,4 @@
-// import Image from "next/image";
 import AppBar from "./components/AppBar";
-import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import WorkList from "./components/WorkList/WorkList";
 
@@ -12,12 +10,12 @@ export default function Home() {
     <main className="p-4 bg-slate-900">
       <section className="lg:min-h-screen">
         <AppBar />
-        <p className="lg:w-3/4 mx-auto text-lg dark:text-slate-300">
+        <p className="lg:w-3/4 text-justify mx-auto text-center text-lg dark:text-slate-300">
           {introText}
         </p>
         <Hero />
       </section>
-      <h2 className="my-12 lg:my-16 text-5xl font-bold text-emerald-400 text-center">
+      <h2 className="my-12 lg:my-16 text-3xl lg:text-5xl font-bold text-emerald-400 text-center">
         Moje realizacje
       </h2>
       <WorkList />
