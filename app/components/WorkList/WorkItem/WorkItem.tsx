@@ -38,7 +38,7 @@ export default function WorkItem({ work }: IWorkItemProps) {
             </h4>
             {work.myRole.map((role, index) => {
               return (
-                <span className="my-1 lg:inline-block mr-2 lg:mr-4 px-4 pt-1 pb-2 bg-slate-800 text-xs lg:text-sm text-stone-400 capitalize">
+                <span className="my-1 lg:inline-block mr-2 lg:mr-4 px-4 pt-1 pb-2 bg-slate-800 text-xs lg:text-sm text-slate-200 capitalize">
                   {role}
                 </span>
               );
@@ -55,7 +55,7 @@ export default function WorkItem({ work }: IWorkItemProps) {
               return (
                 <span
                   key={index}
-                  className="my-1 inline-block mr-2 lg:mr-4 px-4 pt-1 pb-2 text-xs lg:text-sm bg-slate-800 capitalize text-stone-400"
+                  className="my-1 inline-block mr-2 lg:mr-4 px-4 pt-1 pb-2 text-xs lg:text-sm bg-slate-800 capitalize text-slate-200"
                 >
                   {item}
                 </span>
