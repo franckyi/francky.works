@@ -10,12 +10,13 @@ export default function Hero() {
         </div>
       </div>
       <Image
-        src="/hero-simple.webp"
+        src="/img/hero-simple.webp"
         className="z-10 relative mx-auto opacity-50"
         width={926}
         height={500}
         alt="Francky"
         draggable="false"
+        priority
       />
     </div>
   );
