@@ -33,7 +33,7 @@ export default function WorkItem({ work }: IWorkItemProps) {
 
         {work.myRole && (
           <div className="my-4 lg:flex lg:items-center">
-            <h4 className="lg:inline lg:mr-4 font-semibold text-emerald-400 text-xs lg:text-lg">
+            <h4 className="lg:inline lg:mr-4 font-semibold text-emerald-400 text-xs lg:text-base">
               Moja rola
             </h4>
             {work.myRole.map((role: string, index: number) => {
@@ -50,8 +50,8 @@ export default function WorkItem({ work }: IWorkItemProps) {
         )}
 
         {work.stack && (
-          <div className="my-4 lg:flex lg:items-center">
-            <h4 className="lg:inline lg:mr-4 font-semibold text-emerald-400 text-xs lg:text-lg">
+          <div className="my-4 lg:flex flex-wrap lg:items-center">
+            <h4 className="lg:inline lg:mr-4 font-semibold text-emerald-400 text-xs lg:text-base">
               Technologie
             </h4>
             {work.stack.map((item, index: number) => {
@@ -67,7 +67,7 @@ export default function WorkItem({ work }: IWorkItemProps) {
           </div>
         )}
 
-        <div className="my-6 whitespace-nowrap text-xs lg:text-base">
+        <div className="my-6 whitespace-nowrap lg:whitespace-normal text-xs lg:text-base">
           {work.liveUrl && (
             <a
               href={work.liveUrl}
