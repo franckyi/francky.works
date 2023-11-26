@@ -32,8 +32,8 @@ export default function WorkItem({ work }: IWorkItemProps) {
         )}
 
         {work.myRole && (
-          <>
-            <h4 className="my-4 lg:inline lg:mr-4 font-semibold text-emerald-400 text-xs lg:text-lg">
+          <div className="my-4 lg:flex lg:items-center">
+            <h4 className="lg:inline lg:mr-4 font-semibold text-emerald-400 text-xs lg:text-lg">
               Moja rola
             </h4>
             {work.myRole.map((role: string, index: number) => {
@@ -46,12 +46,12 @@ export default function WorkItem({ work }: IWorkItemProps) {
                 </span>
               );
             })}
-          </>
+          </div>
         )}
 
         {work.stack && (
-          <div className="my-4">
-            <h4 className="mr-4 lg:inline font-semibold text-emerald-400 text-xs lg:text-lg">
+          <div className="my-4 lg:flex lg:items-center">
+            <h4 className="lg:inline lg:mr-4 font-semibold text-emerald-400 text-xs lg:text-lg">
               Technologie
             </h4>
             {work.stack.map((item, index: number) => {
@@ -71,7 +71,7 @@ export default function WorkItem({ work }: IWorkItemProps) {
           {work.liveUrl && (
             <a
               href={work.liveUrl}
-              className="py-2 px-4 text-slate-900 font-bold bg-emerald-400 ease-in transition duration-500 hover:bg-amber-400 rounded-full hover:rotate-6 hover:rounded-sm"
+              className="py-2 px-4 text-slate-900 font-bold bg-emerald-400 ease-in transition duration-250 hover:bg-amber-400 rounded-full hover:rotate-6 hover:rounded-md"
               target="_blank"
               rel="nofollow noopener noreferrer"
             >
@@ -82,7 +82,7 @@ export default function WorkItem({ work }: IWorkItemProps) {
           {work.gitUrl && (
             <a
               href={work.gitUrl}
-              className="ml-4 py-2 px-4 text-slate-900 font-bold bg-emerald-400 transition ease-in duration-500 hover:bg-amber-400 rounded-full hover:rotate-6 hover:rounded-sm"
+              className="ml-4 py-2 px-4 text-slate-900 font-bold bg-emerald-400 transition ease-in duration-250 hover:bg-amber-400 rounded-full hover:rotate-6 hover:rounded-md"
               target="_blank"
               rel="nofollow noopener noreferrer"
             >
