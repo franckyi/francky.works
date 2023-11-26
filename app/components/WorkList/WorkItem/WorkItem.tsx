@@ -39,7 +39,7 @@ export default function WorkItem({ work }: IWorkItemProps) {
             {work.myRole.map((role: string, index: number) => {
               return (
                 <span
-                  className="my-1 lg:inline-block mr-2 lg:mr-4 px-4 pt-1 pb-2 bg-slate-800 text-xs lg:text-sm text-slate-200 capitalize"
+                  className="my-1 inline-block mr-2 lg:mr-4 px-4 pt-1 pb-2 bg-slate-800 text-xs lg:text-sm text-slate-200 capitalize"
                   key={index}
                 >
                   {role}
@@ -51,7 +51,7 @@ export default function WorkItem({ work }: IWorkItemProps) {
 
         {work.stack && (
           <div className="my-4">
-            <h4 className="inline mr-4 font-semibold text-emerald-400 text-xs lg:text-lg">
+            <h4 className="mr-4 lg:inline font-semibold text-emerald-400 text-xs lg:text-lg">
               Technologie
             </h4>
             {work.stack.map((item, index: number) => {
@@ -67,11 +67,11 @@ export default function WorkItem({ work }: IWorkItemProps) {
           </div>
         )}
 
-        <div className="my-6">
+        <div className="my-6 whitespace-nowrap text-xs lg:text-base">
           {work.liveUrl && (
             <a
               href={work.liveUrl}
-              className="py-2 px-4 text-slate-900 font-bold bg-emerald-400 hover:bg-amber-400 rounded-full hover:rotate-6 transition ease-in-out duration-150 hover:rounded-sm"
+              className="py-2 px-4 text-slate-900 font-bold bg-emerald-400 ease-in transition duration-500 hover:bg-amber-400 rounded-full hover:rotate-6 hover:rounded-sm"
               target="_blank"
               rel="nofollow noopener noreferrer"
             >
@@ -82,7 +82,7 @@ export default function WorkItem({ work }: IWorkItemProps) {
           {work.gitUrl && (
             <a
               href={work.gitUrl}
-              className="ml-4 py-2 px-4 text-slate-900 font-bold bg-emerald-400 hover:bg-amber-400 rounded-full hover:rotate-6 transition ease-in-out duration-150 hover:rounded-sm"
+              className="ml-4 py-2 px-4 text-slate-900 font-bold bg-emerald-400 transition ease-in duration-500 hover:bg-amber-400 rounded-full hover:rotate-6 hover:rounded-sm"
               target="_blank"
               rel="nofollow noopener noreferrer"
             >
@@ -93,7 +93,7 @@ export default function WorkItem({ work }: IWorkItemProps) {
           {work.designUrl && (
             <a
               href={work.designUrl}
-              className="ml-4 py-2 px-4 text-slate-900 font-bold bg-emerald-400 hover:bg-amber-400 rounded-full hover:rotate-6 transition ease-in-out duration-150 hover:rounded-sm"
+              className="ml-4 py-2 px-4 text-slate-900 font-bold bg-emerald-400 transition ease-in duration-500 hover:bg-amber-400 rounded-full hover:rotate-6 hover:rounded-sm"
               target="_blank"
               rel="nofollow noopener noreferrer"
             >
