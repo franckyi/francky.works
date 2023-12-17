@@ -2,6 +2,38 @@ import IWork from "@/app/types/IWork";
 
 let workList: IWork[] = [
   {
+    title: "Strona firmowa",
+    client: "Pizzeria & Kebab",
+    business: "Gastronomia",
+    imgUrl: "/img/kebab.webp",
+    desc: "Zaprojektowałem nową stronę dla pizzerii/kebab Hassan ze Starogardu Gdańskiego. Używałem WordPress jako headless CMS do zarządzanie restauracji. Frontend strony jest wyświetlany poprzez React/Next.js, korzystając z endpointów zwócone przez WordPress.",
+    myRole: ["projekt strony", "web development"],
+    stack: [
+      "HTML",
+      "javascript",
+      "WordPress Rest API",
+      "react",
+      "Next.js",
+      "tailwind CSS"
+    ],
+    gitUrl: "https://github.com/franckyi/hassan",
+    liveUrl: "https://www.kebab-hassan.pl/",
+    designUrl: null,
+  },
+  {
+    title: "wydajna aplikacja dla miłośników NBA",
+    client: "Basket Maniacs",
+    business: "Sport",
+    imgUrl: "/img/bm.webp",
+    desc: "Aplikacja frontendowa która wyświetli ostatnie wyniki meczów, wiadomości, listę zawodników i klubów ze świata NBA. Korzysta z architektury REST Api.",
+    myRole: ["UI/UX design", "web application development"],
+    stack: ["angular", "typescript", "RxJs"],
+    gitUrl: "https://github.com/franckyi/basket-maniacs-app",
+    liveUrl: "https://francky.works/basket-maniacs",
+    designUrl:
+      "https://www.figma.com/file/zXa5Q8IpAgz19Uqle2R4NH/Serwis-NBA?type=design&node-id=0%3A1&mode=design&t=QtLDPxJ0HFTGQ87l-1",
+  },
+  {
     title: "nowy projekt strony",
     client: "Godere.pl",
     business: "Technologia",
@@ -70,19 +102,6 @@ let workList: IWork[] = [
     gitUrl: "https://github.com/franckyi/gbiz",
     liveUrl: "http://g-biz.pl",
     designUrl: "https://www.behance.net/gallery/70245947/G-BIZ-Logo-Website",
-  },
-  {
-    title: "wydajna aplikacja dla miłośników NBA",
-    client: "Basket Maniacs",
-    business: "Sport",
-    imgUrl: "/img/bm.webp",
-    desc: "Aplikacja frontendowa która wyświetli ostatnie wyniki meczów, wiadomości, listę zawodników i klubów ze świata NBA. Korzysta z architektury REST Api.",
-    myRole: ["UI/UX design", "web application development"],
-    stack: ["angular", "typescript", "RxJs"],
-    gitUrl: "https://github.com/franckyi/basket-maniacs-app",
-    liveUrl: "https://francky.works/basket-maniacs",
-    designUrl:
-      "https://www.figma.com/file/zXa5Q8IpAgz19Uqle2R4NH/Serwis-NBA?type=design&node-id=0%3A1&mode=design&t=QtLDPxJ0HFTGQ87l-1",
   },
   {
     title: "dedykowana strona firmowa",
