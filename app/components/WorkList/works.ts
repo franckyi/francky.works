@@ -2,11 +2,11 @@ import IWork from "@/app/types/IWork";
 
 let workList: IWork[] = [
   {
-    title: "Strona firmowa",
-    client: "Pizzeria & Kebab",
+    title: "Strona restauracji",
+    client: "Hassan",
     business: "Gastronomia",
     imgUrl: "/img/kebab.webp",
-    desc: "Zaprojektowałem nową stronę dla pizzerii/kebab Hassan ze Starogardu Gdańskiego. Używałem WordPress jako headless CMS do zarządzanie restauracji. Frontend strony jest wyświetlany poprzez React/Next.js, korzystając z endpointów zwócone przez WordPress.",
+    desc: "Zaprojektowałem nową stronę dla pizzerii/kebab ze Starogardu Gdańskiego. Używałem WordPress jako headless CMS do zarządzanie restauracji. Frontend jest wyświetlany poprzez React/Next.js, korzystając z endpointów zwrócone przez WordPress Rest API.",
     myRole: ["projekt strony", "web development"],
     stack: [
       "HTML",
@@ -14,7 +14,8 @@ let workList: IWork[] = [
       "WordPress Rest API",
       "react",
       "Next.js",
-      "tailwind CSS"
+      "tailwind CSS",
+      "vercel",
     ],
     gitUrl: "https://github.com/franckyi/hassan",
     liveUrl: "https://www.kebab-hassan.pl/",
