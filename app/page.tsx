@@ -29,7 +29,22 @@ export default function Home() {
         <WorkList />
       </main>
       <footer className="w-full py-4 bg-slate-900 text-slate-500 text-center border-t-2 border-slate-800">
-        {footerText}
+        {footerText} | Poprzednie wersje strony:
+        <a
+          href="https://francky.works/portfolio-v2022/"
+          target="_blank"
+          className="text-sm hover:text-slate-400"
+        >
+          &nbsp; v.2022,
+        </a>
+        &nbsp;
+        <a
+          href="https://francky.works/portfolio-v2023/"
+          target="_blank"
+          className="text-sm hover:text-slate-400"
+        >
+          v.2023
+        </a>
       </footer>
     </>
   );
