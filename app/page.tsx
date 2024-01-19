@@ -3,22 +3,30 @@ import Hero from "./components/Hero";
 import WorkList from "./components/WorkList/WorkList";
 
 const introText =
-  "Nazywam się Francky Iside. Jestem web developerem z Gdańska. Specjalizuję się w projektowaniu,  oraz w tworzeniu stron internetowych i aplikacji web. Wykorzystuję technologie TypeScript, Php, React, Wordpress i Next.js.";
+  "Witaj na mojej witrynie internetowej! Nazywam się Francky Iside. Jestem frontend developerem specjalizującym się w projektowaniu responsywnych, wydajnych stron internetowych, aplikacji SPA i sklepów eCommerce. Wykorzystuję technologie TypeScript, React, Next.js, Php, oraz WordPress. Oferuję kreatywne podejście do projektu, tworząc innowacyjne i funkcjonalne rozwiązania. Jestem gotów podjąć się nowych wyzwań, dlatego zapraszam do kontaktu firm poszukujących developera do wzmocnienia własnego zespołu, jak i agencje poszukujących freelancerów do współpracy. Poniżej udostępniłem kilka wybranych realizacji. Nie zapominaj odwiedzieć mój profil Linkedin i zapraszam do kontaktu!";
+
+const footerText =
+  "Francky Iside - Projektowanie Stron Internetowych i Web Development";
 
 export default function Home() {
   return (
-    <main className="p-4 bg-slate-900">
-      <section className="lg:min-h-screen">
-        <AppBar />
-        <p className="lg:w-3/4 text-justify mx-auto text-center text-lg dark:text-slate-300">
-          {introText}
-        </p>
-        <Hero />
-      </section>
-      <h2 className="my-12 lg:my-16 text-3xl lg:text-5xl font-bold text-emerald-400 text-center">
-        Moje realizacje
-      </h2>
-      <WorkList />
-    </main>
+    <>
+      <main className="p-4 bg-slate-900">
+        <section className="lg:min-h-screen">
+          <AppBar />
+          <p className="lg:w-3/4 text-justify mx-auto text-center text-lg dark:text-slate-300">
+            {introText}
+          </p>
+          <Hero />
+        </section>
+        <h2 className="my-12 lg:my-16 text-3xl lg:text-5xl font-bold text-emerald-400 text-center">
+          Moje realizacje
+        </h2>
+        <WorkList />
+      </main>
+      <footer className="w-full py-4 bg-slate-900 text-slate-500 text-center border-t-2 border-slate-800">
+        {footerText}
+      </footer>
+    </>
   );
 }

@@ -6,7 +6,7 @@ let workList: IWork[] = [
     client: "Hassan",
     business: "Gastronomia",
     imgUrl: "/img/kebab.webp",
-    desc: "Zaprojektowałem nową stronę dla pizzerii/kebab ze Starogardu Gdańskiego. Używałem WordPress jako headless CMS do zarządzanie restauracji. Frontend jest wyświetlany poprzez React/Next.js, korzystając z endpointów zwrócone przez WordPress Rest API.",
+    desc: "Zaprojektowałem nową stronę dla pizzerii/kebab ze Starogardu Gdańskiego. Korzystając z React/Next.js,l oraz headless WordPress jako panel administracyjny do zarządzanie restauracji.",
     myRole: ["projekt strony", "web development"],
     stack: [
       "HTML",
@@ -125,7 +125,7 @@ let workList: IWork[] = [
     myRole: ["web application development"],
     stack: ["javaScript", "CSS"],
     gitUrl: "https://github.com/franckyi/weather-app-vanilla-js",
-    liveUrl: "https://francky.works/weather-app",
+    liveUrl: "https://francky.works/meteo-livebg",
     designUrl: null,
   },
   {
