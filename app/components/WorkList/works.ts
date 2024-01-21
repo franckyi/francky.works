@@ -6,7 +6,7 @@ let workList: IWork[] = [
     client: "Hassan",
     business: "Gastronomia",
     imgUrl: "/img/kebab.webp",
-    desc: "Zaprojektowałem nową stronę dla pizzerii/kebab ze Starogardu Gdańskiego. Korzystając z React/Next.js,l oraz headless WordPress jako panel administracyjny do zarządzanie restauracji.",
+    desc: "Strona dla restauracji w Starogardzie Gdańskim. Firmie zależało na nowoczesnym wyglądzie, oraz wydajności strony. Byłem odpowiedzialny za projektowanie UI, oraz kodowałem stronę w formie aplikacji SPA. Jako frontend wybrałem React i Next.js, a korzystałem z headless WP jako panel do zarządzanie restauracji.",
     myRole: ["projekt strony", "web development"],
     stack: [
       "HTML",
