@@ -123,7 +123,7 @@ let workList: IWork[] = [
     imgUrl: "/img/meteo.webp",
     desc: "Aplikacja pogody ze zmieniającym się tłem.",
     myRole: ["web application development"],
-    stack: ["javaScript", "CSS"],
+    stack: ["javaScript", "CSS", "API"],
     gitUrl: "https://github.com/franckyi/weather-app-vanilla-js",
     liveUrl: "https://francky.works/meteo-livebg",
     designUrl: null,
