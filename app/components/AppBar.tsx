@@ -14,8 +14,8 @@ let menuItems: IMenuItem[] = [
     target: "_blank",
   },
   {
-    name: "Behance",
-    url: "https://www.behance.net/iside",
+    name: "v.2022",
+    url: "https://franckyi.github.io/my-portfolio-website-v2022/",
     target: "_blank",
   },
 ];
