@@ -167,7 +167,7 @@ let workList: IWork[] = [
     myRole: ["web application development"],
     stack: ["javaScript", "CSS", "API"],
     gitUrl: "https://github.com/franckyi/meteo-livebg-web-app",
-    liveUrl: "https://meteo.francky.works",
+    liveUrl: "https://meteolivebg.francky.works/",
     designUrl: null,
   },
   {
