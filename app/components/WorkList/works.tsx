@@ -1,6 +1,6 @@
 import IWork from "@/app/types/IWork";
 
-function getJobDesc(client: string) {
+function getJobDesc(client: string): string | JSX.Element | null {
   if (client === "Meteo Livebg") {
     return (
       <>
@@ -27,6 +27,7 @@ function getJobDesc(client: string) {
       </>
     );
   }
+  return null;
 }
 
 let workList: IWork[] = [
@@ -59,7 +60,7 @@ let workList: IWork[] = [
     myRole: ["UI/UX design", "SPA development"],
     stack: ["angular", "typescript", "RxJs"],
     gitUrl: "https://github.com/franckyi/basket-maniacs-app",
-    liveUrl: "https://basketm.francky.works",
+    liveUrl: "https://basketmaniacs.francky.works",
     designUrl:
       "https://www.figma.com/file/zXa5Q8IpAgz19Uqle2R4NH/Serwis-NBA?type=design&node-id=0%3A1&mode=design&t=QtLDPxJ0HFTGQ87l-1",
   },
@@ -178,7 +179,7 @@ let workList: IWork[] = [
     myRole: ["web application development"],
     stack: ["javaScript"],
     gitUrl: "https://github.com/franckyi/seconds-formatter",
-    liveUrl: "https://seconds.francky.works/",
+    liveUrl: "https://secondsformatter.francky.works/",
     designUrl: null,
   },
   {
