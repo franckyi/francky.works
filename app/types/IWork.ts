@@ -3,7 +3,7 @@ export default interface IWork {
   business: string | null;
   client: string | null;
   imgUrl: string;
-  desc: string;
+  desc: string | ((arg: string) => string);
   myRole: string[];
   stack: string[];
   gitUrl: string | null;

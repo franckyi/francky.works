@@ -1,5 +1,34 @@
 import IWork from "@/app/types/IWork";
 
+function getJobDesc(client: string) {
+  if (client === "Meteo Livebg") {
+    return (
+      <>
+        Aplikacja pogody ze zmieniającym się tłem. Sprawdź również wersję{" "}
+        <a
+          href="https://meteovue.francky.works/"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          title="Wersja Vue"
+          className="underline"
+        >
+          Vue
+        </a>{" "}
+        oraz{" "}
+        <a
+          href="https://meteoangular.francky.works/"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          title="Wersja Angular"
+          className="underline"
+        >
+          Angular
+        </a>
+      </>
+    );
+  }
+}
+
 let workList: IWork[] = [
   {
     title: "Strona restauracji",
@@ -133,7 +162,7 @@ let workList: IWork[] = [
     client: "Meteo Livebg",
     business: "Styl życia",
     imgUrl: "/img/meteo.webp",
-    desc: "Aplikacja pogody ze zmieniającym się tłem.",
+    desc: getJobDesc("Meteo Livebg"),
     myRole: ["web application development"],
     stack: ["javaScript", "CSS", "API"],
     gitUrl: "https://github.com/franckyi/meteo-livebg-web-app",
@@ -149,7 +178,7 @@ let workList: IWork[] = [
     myRole: ["web application development"],
     stack: ["javaScript"],
     gitUrl: "https://github.com/franckyi/seconds-formatter",
-    liveUrl: "https://franckyi.github.io/seconds-formatter/",
+    liveUrl: "https://seconds.francky.works/",
     designUrl: null,
   },
   {
