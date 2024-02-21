@@ -1,38 +1,9 @@
 import IWork from "@/app/types/IWork";
-
-function getJobDesc(client: string): string | JSX.Element | null {
-  if (client === "Meteo Livebg") {
-    return (
-      <>
-        Aplikacja pogody ze zmieniającym się tłem. Sprawdź również wersję{" "}
-        <a
-          href="https://meteovue.francky.works/"
-          target="_blank"
-          rel="noopener noreferrer nofollow"
-          title="Wersja Vue"
-          className="underline"
-        >
-          Vue
-        </a>{" "}
-        oraz{" "}
-        <a
-          href="https://meteoangular.francky.works/"
-          target="_blank"
-          rel="noopener noreferrer nofollow"
-          title="Wersja Angular"
-          className="underline"
-        >
-          Angular
-        </a>
-      </>
-    );
-  }
-  return null;
-}
+import getJobDesc from "../../lib/getJobDesc";
 
 let workList: IWork[] = [
   {
-    title: "Strona restauracji",
+    title: "strona restauracji",
     client: "Hassan",
     business: "Gastronomia",
     imgUrl: "/img/kebab.webp",
@@ -49,6 +20,18 @@ let workList: IWork[] = [
     ],
     gitUrl: "https://github.com/franckyi/hassan-website",
     liveUrl: "https://www.kebab-hassan.pl/",
+    designUrl: null,
+  },
+  {
+    title: "nowoczesna strona one-page",
+    client: "Primo MOS",
+    business: "Fryzjerstwo",
+    imgUrl: "/img/primo.webp",
+    desc: "Budowałem nowoczesną stronę w stylu one-page dla studio Primo MOS Barber Shop w Gdańsku. Szybka realizacja, miałem na to tydzień czasu. Zadbałem o doboru stylu i kolorystyki strony, jak również o poprawności działania wersje light/dark i responsywność na różnych ekranach.",
+    myRole: ["web development"],
+    stack: ["HTML", "javascript", "react", "Next.js", "tailwind CSS", "vercel"],
+    gitUrl: "https://github.com/franckyi/primomos",
+    liveUrl: "https://www.primomosbarbershop.pl",
     designUrl: null,
   },
   {
