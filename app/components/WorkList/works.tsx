@@ -81,7 +81,7 @@ let workList: IWork[] = [
     business: "Technologia",
     imgUrl: "/img/nii.webp",
     desc: "Niimbot.pl jest polskim leaderem w sprzedażu drukarki etykiet. Wykonałem redesign strony głównej. Celem było polepszenie user experience, unowocześnienie strony pod kątem wizualnym, oraz poprawienie kolorystyki. Poprawiłem strukturę strony, dzielając na sekcje, poprawiłem styl, dodałem nowoczesne komponenty webowe takie jak karuzele, transitions i drobne efekty.",
-    myRole: ["website redesign", "web development"],
+    myRole: ["Home redesign", "E-commerce tasks", "web development"],
     stack: ["wordPress", "WooCommerce", "CSS"],
     gitUrl: null,
     liveUrl: "https://niimbot.pl",
