@@ -24,6 +24,25 @@ function getJobDesc(client: string): string | JSX.Element | null {
         </a>
       </>
     );
+  } else if (client === "NORBUD") {
+    return (
+      <p>
+        Odświeżyłem wygląd strony dla firmy budowlanej.
+        <ul className="list-disc">
+          <li>Nowa kolorystyka strony dopasowana do logo firmy</li>
+          <li>Nowy design sekcji Hero</li>
+          <li>
+            Konfiguracja programowalność content w CMS (PHP, CPT, CFields) do
+            wyświetlenia na frontendzie
+          </li>
+          <li>
+            Poprawa widoków Realizacje i Wynajem, dodałem karuzele zdjęć które
+            współgrają z galeriami w WordPressie.
+          </li>
+          <li>Budowałem frontend w React/Next.js.</li>
+        </ul>
+      </p>
+    );
   }
   return null;
 }

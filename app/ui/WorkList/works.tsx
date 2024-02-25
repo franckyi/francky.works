@@ -3,6 +3,26 @@ import getJobDesc from "../../lib/getJobDesc";
 
 let workList: IWork[] = [
   {
+    title: "redesign strony",
+    client: "NORBUD",
+    business: "Budownictwo",
+    imgUrl: "/img/norbud.webp",
+    desc: getJobDesc("NORBUD"),
+    myRole: ["UI design", "frontend", "backend"],
+    stack: [
+      "TypeScript",
+      "react",
+      "Next.js",
+      "PHP",
+      "WordPress Rest API",
+      "tailwind CSS",
+      "vercel",
+    ],
+    gitUrl: "https://github.com/franckyi/norbud-frontend",
+    liveUrl: "https://norbud-frontend.vercel.app/",
+    designUrl: null,
+  },
+  {
     title: "strona restauracji",
     client: "Hassan",
     business: "Gastronomia",
