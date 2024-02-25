@@ -1,6 +1,6 @@
-import AppBar from "./components/AppBar";
-import Hero from "./components/Hero";
-import WorkList from "./components/WorkList/WorkList";
+import AppBar from "./ui/AppBar";
+import Hero from "./ui/Hero";
+import WorkList from "./ui/WorkList/WorkList";
 
 const introText =
   "Witaj na mojej witrynie internetowej! Nazywam się Francky Iside. Jestem frontend developerem specjalizującym się w projektowaniu responsywnych, wydajnych stron internetowych, aplikacji SPA i sklepów eCommerce. Wykorzystuję technologie TypeScript, React, Next.js, Php, oraz WordPress. Jestem gotów podjąć się nowych wyzwań, dlatego zapraszam do kontaktu firm poszukujących developera do wzmocnienia własnego zespołu, jak i agencje poszukujących freelancerów do współpracy.";
