@@ -11,9 +11,6 @@ export default function Home() {
           <AppBar />
           <Hero />
         </section>
-        <h2 className="my-8 text-3xl lg:text-5xl font-bold text-emerald-400 text-center font-secondary">
-          Moje realizacje
-        </h2>
         <WorkList />
       </main>
       <Footer />

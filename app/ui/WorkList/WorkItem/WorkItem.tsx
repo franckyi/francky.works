@@ -34,7 +34,7 @@ export default function WorkItem({ work }: IWorkItemProps) {
         {work.myRole && (
           <div className="my-4 lg:flex lg:items-center">
             <h4 className="lg:inline lg:mr-4 font-semibold text-emerald-400 text-xs lg:text-base">
-              Moja rola
+              My role
             </h4>
             {work.myRole.map((role: string, index: number) => {
               return (
@@ -52,7 +52,7 @@ export default function WorkItem({ work }: IWorkItemProps) {
         {work.stack && (
           <div className="my-4 lg:flex flex-wrap lg:items-center">
             <h4 className="lg:inline lg:mr-4 font-semibold text-emerald-400 text-xs lg:text-base">
-              Technologie
+              Tecnologies
             </h4>
             {work.stack.map((item, index: number) => {
               return (
@@ -75,7 +75,7 @@ export default function WorkItem({ work }: IWorkItemProps) {
               target="_blank"
               rel="nofollow noopener noreferrer"
             >
-              Strona live
+              Live
             </a>
           )}
 
@@ -86,7 +86,7 @@ export default function WorkItem({ work }: IWorkItemProps) {
               target="_blank"
               rel="nofollow noopener noreferrer"
             >
-              Kod {"<>"}
+              Code {"<>"}
             </a>
           )}
 
@@ -97,7 +97,7 @@ export default function WorkItem({ work }: IWorkItemProps) {
               target="_blank"
               rel="nofollow noopener noreferrer"
             >
-              Projekty
+              Design
             </a>
           )}
         </div>

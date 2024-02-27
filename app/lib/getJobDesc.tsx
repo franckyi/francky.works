@@ -2,12 +2,12 @@ function getJobDesc(client: string): string | JSX.Element | null {
   if (client === "Meteo Livebg") {
     return (
       <>
-        Aplikacja pogody ze zmieniającym się tłem. Sprawdź również wersję{" "}
+        Weather app with live background. Check also other versions made with{" "}
         <a
           href="https://meteovue.francky.works/"
           target="_blank"
           rel="noopener noreferrer nofollow"
-          title="Wersja Vue"
+          title="made with Vue"
           className="underline"
         >
           Vue
@@ -17,7 +17,7 @@ function getJobDesc(client: string): string | JSX.Element | null {
           href="https://meteoangular.francky.works/"
           target="_blank"
           rel="noopener noreferrer nofollow"
-          title="Wersja Angular"
+          title="made with Angular"
           className="underline"
         >
           Angular
@@ -27,19 +27,18 @@ function getJobDesc(client: string): string | JSX.Element | null {
   } else if (client === "NORBUD") {
     return (
       <p>
-        Odświeżyłem wygląd strony dla firmy budowlanej.
+        Norbud is a Polish construction company. What I did for Norbud:
         <ul className="list-disc">
-          <li>Nowa kolorystyka strony dopasowana do logo firmy</li>
-          <li>Nowy design sekcji Hero</li>
+          <li>Improved color palette, UI, hero and sections</li>
           <li>
-            Konfiguracja programowalność content w CMS (PHP, CPT, CFields) do
-            wyświetlenia na frontendzie
+            Used PHP, CPTs and CFs to program a gallery system in WordPress
+            backend () to let client easily manage content to be displayed on
+            the frontend.
           </li>
           <li>
-            Poprawa widoków Realizacje i Wynajem, dodałem karuzele zdjęć które
-            współgrają z galeriami w WordPressie.
+            Implemented React carousel library to work with the WordPress CMS.
           </li>
-          <li>Budowałem frontend w React/Next.js.</li>
+          <li>Frontend development using React/Next.js.</li>
         </ul>
       </p>
     );
