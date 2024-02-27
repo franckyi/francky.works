@@ -17,10 +17,10 @@ export default function Hero() {
         priority
       />
       <div className="max-lg:bottom-0 lg:-bottom-2">
-        <div className="max-lg:text-2xl lg:text-7xl font-bold text-emerald-400">
+        <div className="max-lg:text-2xl lg:text-5xl font-bold text-emerald-400 font-secondary">
           Francky Iside
         </div>
-        <div className="mt-4 mb-8 max-lg:text-xl lg:text-4xl uppercase text-slate-400">
+        <div className="mt-4 mb-8 max-lg:text-xl lg:text-4xl text-slate-400">
           React developer
         </div>
         <p className="max-w-screen-xl lg:mx-auto text-lg dark:text-slate-500">

@@ -17,7 +17,7 @@ export default function WorkItem({ work }: IWorkItemProps) {
         draggable="false"
       />
       <div className="lg:w-2/4">
-        <h3 className="mb-2 text-2xl lg:text-3xl text-slate-200 font-semibold">
+        <h3 className="mb-2 text-2xl lg:text-2xl text-slate-200 font-semibold font-secondary">
           <span className="text-emerald-400">{work.client}</span> — {work.title}
         </h3>
 

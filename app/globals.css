@@ -25,3 +25,7 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.font-secondary {
+  font-family: var(--font-secondary);
+}
