@@ -39,7 +39,7 @@ export default function AppBar() {
               key={index}
               href={item.url}
               target={item.target}
-              className="text-sm lg:ml-4 px-2 lg:px-4 py-2 border-2 border-slate-900 hover:border-2 hover:border-b-8 hover:border-amber-400 hover:rounded"
+              className="text-sm lg:ml-4 px-2 lg:px-4 py-2 border-2 border-slate-900 hover:border-2 hover:border-b-8 hover:border-emerald-400 hover:rounded"
             >
               {item.name}
             </a>
