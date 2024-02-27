@@ -32,8 +32,8 @@ function getJobDesc(client: string): string | JSX.Element | null {
           <li>Improved color palette, UI/UX, frontend development</li>
           <li>
             Used PHP, CPTs and CFs to program a gallery system in WordPress
-            backend () to let client easily manage content to be displayed on
-            the frontend.
+            backend to let client easily manage content to be displayed on the
+            frontend.
           </li>
           <li>
             Implemented React carousel library to work with the WordPress CMS.
