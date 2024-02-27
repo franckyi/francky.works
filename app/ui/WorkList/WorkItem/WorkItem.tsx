@@ -5,9 +5,12 @@ interface IWorkItemProps {
   work: IWork;
 }
 
+const workItemClasses =
+  "my-12 lg:my-24 lg:flex lg:items-center gap-8 lg:gap-16 rounded-sm saturate-100";
+
 export default function WorkItem({ work }: IWorkItemProps) {
   return (
-    <article className="my-12 lg:my-24 lg:flex lg:items-center gap-8 rounded-sm saturate-100">
+    <article className={workItemClasses}>
       <Image
         src={work.imgUrl}
         alt={work.title}
@@ -32,7 +35,7 @@ export default function WorkItem({ work }: IWorkItemProps) {
         )}
 
         {work.myRole && (
-          <div className="my-4 lg:flex lg:items-center">
+          <div className="my-4 lg:flex lg:items-center whitespace-nowrap lg:flex-wrap">
             <h4 className="lg:inline lg:mr-4 font-semibold text-emerald-400 text-xs lg:text-base">
               My role
             </h4>

@@ -27,9 +27,9 @@ function getJobDesc(client: string): string | JSX.Element | null {
   } else if (client === "NORBUD") {
     return (
       <p>
-        Norbud is a Polish construction company. What I did for Norbud:
+        Norbud is a Polish construction company. Tasks:
         <ul className="list-disc">
-          <li>Improved color palette, UI, hero and sections</li>
+          <li>Improved color palette, UI/UX, frontend development</li>
           <li>
             Used PHP, CPTs and CFs to program a gallery system in WordPress
             backend () to let client easily manage content to be displayed on
@@ -38,7 +38,6 @@ function getJobDesc(client: string): string | JSX.Element | null {
           <li>
             Implemented React carousel library to work with the WordPress CMS.
           </li>
-          <li>Frontend development using React/Next.js.</li>
         </ul>
       </p>
     );

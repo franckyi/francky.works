@@ -1,10 +1,10 @@
 import Image from "next/image";
-import "./Hero/hero.css";
-import { heroHeading, heroSubheading, heroText } from "../data/hero";
+import "./hero.css";
+import { heroHeading, heroSubheading, heroText } from "../../data/hero";
 
 export default function Hero() {
   return (
-    <div className="lg:mx-24 flex gap-8 flex-col lg:flex-row lg:items-center justify-center">
+    <section className="lg:mx-40 flex gap-8 lg:gap-16 flex-col lg:flex-row lg:items-center justify-center">
       <Image
         src="/img/hero.webp"
         className="avatar-shape"
@@ -25,6 +25,6 @@ export default function Hero() {
           {heroText}
         </p>
       </div>
-    </div>
+    </section>
   );
 }

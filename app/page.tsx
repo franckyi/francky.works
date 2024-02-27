@@ -1,5 +1,5 @@
 import AppBar from "./ui/AppBar";
-import Hero from "./ui/Hero";
+import Hero from "./ui/Hero/Hero";
 import WorkList from "./ui/WorkList/WorkList";
 import Footer from "./ui/Footer";
 
