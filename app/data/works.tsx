@@ -47,7 +47,7 @@ export const workList: IWork[] = [
     client: "Primo MOS",
     business: "Hairstyling",
     imgUrl: "/img/primo.webp",
-    desc: "Developed a modern website a Gdańsk based Barber Shop. Quick project, had only two weeks to launch it. Curated the color palette, UI/UX, responsiveness and light/dark mode.",
+    desc: "Developed a modern website for Primo MOS Barber Shop in Gdańsk. Curated the color palette, UI/UX, responsiveness and light/dark mode.",
     myRole: ["UI/UX, web development"],
     stack: [
       "TypeScript",
