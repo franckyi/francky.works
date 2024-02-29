@@ -1,6 +1,7 @@
 import Image from "next/image";
 import "./hero.css";
-import { heroHeading, heroSubheading, heroText } from "../../data/hero";
+import "../animations/animate-pulse.css";
+import { heroHeading, heroSubheading, getHeroText } from "../../data/hero";
 
 export default function Hero() {
   return (
@@ -15,14 +16,16 @@ export default function Hero() {
         priority
       />
       <div className="max-lg:bottom-0 lg:-bottom-2">
-        <div className="max-lg:text-2xl lg:text-5xl font-bold text-emerald-400 font-secondary">
+        <div className="max-lg:text-2xl lg:text-5xl font-bold text-emerald-400 font-secondary hover:animate-pulse">
+          <span className="text-slate-500 animate-pulse">{"<"}</span>
           {heroHeading}
+          <span className="text-slate-500 animate-pulse">{" />"}</span>
         </div>
         <div className="mt-4 mb-8 max-lg:text-xl lg:text-2xl text-slate-400">
           {heroSubheading}
         </div>
         <p className="max-w-screen-xl lg:mx-auto text-lg dark:text-slate-500">
-          {heroText}
+          {getHeroText()}
         </p>
       </div>
     </section>

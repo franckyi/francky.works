@@ -1,5 +1,4 @@
 import IWork from "@/app/types/IWork";
-import getJobDesc from "../lib/getJobDesc";
 
 export const worksHeading = "My works";
 export const workList: IWork[] = [
@@ -8,7 +7,28 @@ export const workList: IWork[] = [
     client: "Norbud",
     business: "Constructions",
     imgUrl: "/img/norbud.webp",
-    desc: getJobDesc("NORBUD"),
+    desc: (
+      <>
+        <p>
+          Norbud is a Polish construction company. What I did for the client:
+        </p>
+        <ul className="list-disc">
+          <li>Improved color palette, UI/UX, frontend development</li>
+          <li>
+            Implemented light/dark mode using React Context API and Tailwind
+          </li>
+          <li>
+            Used PHP, CPTs and CFs to program a gallery system and other content
+            in WordPress backend to let client easily manage content to be
+            displayed on the frontend.
+          </li>
+          <li>
+            Implemented React carousel library to work with WordPress image
+            galleries.
+          </li>
+        </ul>
+      </>
+    ),
     myRole: ["UI design", "frontend", "backend"],
     stack: [
       "TypeScript",
@@ -179,7 +199,30 @@ export const workList: IWork[] = [
     client: "Meteo Livebg",
     business: "Life style",
     imgUrl: "/img/meteo.webp",
-    desc: getJobDesc("Meteo Livebg"),
+    desc: (
+      <>
+        Weather app with live background. Check also other versions made with{" "}
+        <a
+          href="https://meteovue.francky.works/"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          title="made with Vue"
+          className="underline"
+        >
+          Vue
+        </a>{" "}
+        oraz{" "}
+        <a
+          href="https://meteoangular.francky.works/"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          title="made with Angular"
+          className="underline"
+        >
+          Angular
+        </a>
+      </>
+    ),
     myRole: ["SPA development"],
     stack: ["javaScript", "CSS", "Rest API"],
     gitUrl: "https://github.com/franckyi/meteo-livebg-web-app",
