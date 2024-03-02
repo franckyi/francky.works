@@ -24,7 +24,7 @@ export default function Hero() {
         <div className="mt-4 mb-8 max-lg:text-xl lg:text-2xl text-slate-400">
           {heroSubheading}
         </div>
-        <p className="max-w-screen-xl lg:mx-auto text-lg dark:text-slate-500">
+        <p className="max-w-screen-xl lg:w-3/4 text-left text-lg dark:text-slate-500">
           {getHeroText()}
         </p>
       </div>
