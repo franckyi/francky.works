@@ -5,7 +5,7 @@ import { heroHeading, heroSubheading, getHeroText } from "../../data/hero";
 
 export default function Hero() {
   return (
-    <section className="lg:mx-40 flex gap-8 lg:gap-16 flex-col lg:flex-row lg:items-center justify-center">
+    <section className="lg:mx-auto lg:mt-40 lg:w-4/6 flex gap-8 lg:gap-16 flex-col lg:flex-row lg:items-center justify-center">
       <Image
         src="/img/hero.webp"
         className="avatar-shape"
