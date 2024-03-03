@@ -35,7 +35,7 @@ export default function WorkItem({ work }: IWorkItemProps) {
         )}
 
         {work.myRole && (
-          <div className="my-4 lg:flex lg:items-center whitespace-nowrap lg:flex-wrap">
+          <div className="my-4 lg:flex lg:items-center flex-wrap">
             <h4 className="lg:inline lg:mr-4 font-semibold text-emerald-400 text-xs lg:text-base">
               My role
             </h4>
