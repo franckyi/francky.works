@@ -5,7 +5,7 @@ import { heroHeading, heroSubheading, getHeroText } from "../../data/hero";
 
 export default function Hero() {
   return (
-    <section className="lg:mx-auto lg:mt-40 lg:w-4/6 flex gap-8 lg:gap-16 flex-col lg:flex-row lg:items-center justify-center">
+    <section className="lg:mx-40 flex gap-8 lg:gap-16 flex-col lg:flex-row lg:items-center justify-center">
       <Image
         src="/img/hero.webp"
         className="avatar-shape"
@@ -24,9 +24,7 @@ export default function Hero() {
         <div className="mt-4 mb-8 max-lg:text-xl lg:text-2xl text-slate-400">
           {heroSubheading}
         </div>
-        <p className="max-w-screen-xl lg:w-3/4 text-left text-lg dark:text-slate-500">
-          {getHeroText()}
-        </p>
+        {getHeroText()}
       </div>
     </section>
   );

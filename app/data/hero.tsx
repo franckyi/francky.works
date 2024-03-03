@@ -2,7 +2,7 @@ export const heroHeading = "Francky Iside";
 export const heroSubheading = "JavaScript developer with React/Next.js";
 export const getHeroText = () => {
   return (
-    <p>
+    <p className="max-w-screen-xl text-left text-lg dark:text-slate-500">
       I am a JavaScript developer with a proactive, problem solving attitude.
       Since 2016 working with clients building company and e-commerce websites.
       Covered a role as Junior Frontend Developer at iGamingNuts for 2+ years.
