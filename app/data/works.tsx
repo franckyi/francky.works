@@ -211,7 +211,7 @@ export const workList: IWork[] = [
         >
           Vue
         </a>{" "}
-        oraz{" "}
+        and{" "}
         <a
           href="https://meteoangular.francky.works/"
           target="_blank"
