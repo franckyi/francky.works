@@ -4,8 +4,9 @@ import { ReactNode, createContext, useState } from "react";
 import AppBar from "./ui/AppBar";
 import Footer from "./ui/Footer";
 import { primaryFont, secondaryFont } from "./ui/fonts";
+import ThemeContext from "./context api/ThemeContext";
 
-const ThemeContext: Context<null | string> = createContext<null | string>(null);
+// const ThemeContext: Context<null | string> = createContext<null | string>(null);
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState("dark");
