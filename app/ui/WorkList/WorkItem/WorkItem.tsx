@@ -14,13 +14,13 @@ export default function WorkItem({ work }: IWorkItemProps) {
       <Image
         src={work.imgUrl}
         alt={work.title}
-        className="my-8 rounded-md lg:rounded-2xl shadow-xl shadow-slate-950"
+        className="my-8 rounded-md lg:rounded-2xl shadow-xl shadow-slate-400 dark:shadow-slate-950"
         width={645}
         height={365}
         draggable="false"
       />
       <div className="lg:w-2/4">
-        <h3 className="mb-2 text-2xl lg:text-2xl text-slate-200 font-semibold font-secondary">
+        <h3 className="mb-2 text-2xl lg:text-2xl dark:text-slate-200 font-semibold font-secondary">
           <span className="text-emerald-400">{work.client}</span> — {work.title}
         </h3>
 
@@ -31,18 +31,20 @@ export default function WorkItem({ work }: IWorkItemProps) {
         )}
 
         {work.desc && (
-          <p className="mt-4 mb-4 text-justify text-slate-300">{work.desc}</p>
+          <p className="mt-4 mb-4 text-justify dark:text-slate-300">
+            {work.desc}
+          </p>
         )}
 
         {work.myRole && (
           <div className="my-4 lg:flex lg:items-center flex-wrap">
-            <h4 className="lg:inline lg:mr-4 font-semibold text-emerald-400 text-xs lg:text-base">
+            <h4 className="lg:inline lg:mr-4 font-semibold dark:text-emerald-400 text-xs lg:text-base">
               My role
             </h4>
             {work.myRole.map((role: string, index: number) => {
               return (
                 <span
-                  className="my-1 inline-block mr-2 lg:mr-4 px-4 pt-1 pb-2 bg-slate-800 text-xs lg:text-sm text-slate-200 capitalize"
+                  className="my-1 inline-block mr-2 lg:mr-4 px-4 pt-1 pb-2 text-xs lg:text-sm bg-slate-500 dark:bg-slate-800 text-slate-200 capitalize"
                   key={index}
                 >
                   {role}
@@ -54,14 +56,14 @@ export default function WorkItem({ work }: IWorkItemProps) {
 
         {work.stack && (
           <div className="my-4 lg:flex flex-wrap lg:items-center">
-            <h4 className="lg:inline lg:mr-4 font-semibold text-emerald-400 text-xs lg:text-base">
+            <h4 className="lg:inline lg:mr-4 font-semibold dark:text-emerald-400 text-xs lg:text-base">
               Tecnologies
             </h4>
             {work.stack.map((item, index: number) => {
               return (
                 <span
                   key={index}
-                  className="my-1 inline-block mr-2 lg:mr-4 px-4 pt-1 pb-2 text-xs lg:text-sm bg-slate-800 capitalize text-slate-200"
+                  className="my-1 inline-block mr-2 lg:mr-4 px-4 pt-1 pb-2 text-xs lg:text-sm capitalize bg-slate-500 dark:bg-slate-800 text-slate-200"
                 >
                   {item}
                 </span>

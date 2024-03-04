@@ -16,12 +16,12 @@ export default function Hero() {
         priority
       />
       <div className="max-lg:bottom-0 lg:-bottom-2">
-        <div className="max-lg:text-2xl lg:text-5xl font-bold text-emerald-400 font-secondary hover:animate-pulse">
+        <div className="max-lg:text-2xl lg:text-5xl font-bold dark:text-emerald-400 font-secondary hover:animate-pulse">
           <span className="text-slate-500 animate-pulse">{"<"}</span>
           {heroHeading}
           <span className="text-slate-500 animate-pulse">{" />"}</span>
         </div>
-        <div className="mt-4 mb-8 max-lg:text-xl lg:text-2xl text-slate-400">
+        <div className="mt-4 mb-8 max-lg:text-xl lg:text-2xl dark:text-slate-400">
           {heroSubheading}
         </div>
         {getHeroText()}

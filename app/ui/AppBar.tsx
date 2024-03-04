@@ -1,28 +1,17 @@
 import Image from "next/image";
+import { menuItems } from "../data/appbar-links";
+import LightDarkToggleIcon from "./common/lightDarkToggleIcon";
 
-interface IMenuItem {
-  name: string;
-  url: string;
-  target: string;
+const linkClasses =
+  "text-sm lg:ml-4 px-2 lg:px-4 py-2 border-2 border-slate-900 dark:border-slate-600 hover:border-2 hover:border-b-8 hover:border-emerald-400 dark:hover:border-emerald-400";
+
+interface AppBarProps {
+  toggleTheme: () => void;
 }
 
-let menuItems: IMenuItem[] = [
-  { name: "GitHub", url: "https://github.com/franckyi", target: "_blank" },
-  {
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/franckyiside",
-    target: "_blank",
-  },
-  {
-    name: "v.2022",
-    url: "https://franckyi.github.io/my-portfolio-website-v2022/",
-    target: "_blank",
-  },
-];
-
-export default function AppBar() {
+function AppBar({ toggleTheme }: AppBarProps) {
   return (
-    <nav className="flex w-full justify-between mb-12">
+    <header className="flex w-full justify-between pt-4 pb-8 lg:px-8">
       <Image
         className="lg:ml-4"
         src="/img/logo.svg"
@@ -32,20 +21,25 @@ export default function AppBar() {
         priority
         draggable="false"
       />
-      <div>
+      <div className="flex items-center">
+        <button type="button" onClick={toggleTheme} title="toggle theme">
+          <LightDarkToggleIcon />
+        </button>
         {menuItems.map((item, index) => {
           return (
             <a
               key={index}
               href={item.url}
               target={item.target}
-              className="text-sm lg:ml-4 px-2 lg:px-4 py-2 border-2 border-slate-900 hover:border-2 hover:border-b-8 hover:border-emerald-400 hover:rounded"
+              className={linkClasses}
             >
               {item.name}
             </a>
           );
         })}
       </div>
-    </nav>
+    </header>
   );
 }
+
+export default AppBar;

@@ -1,36 +1,35 @@
-import type { Metadata } from "next";
-import { Bruno_Ace } from "next/font/google";
-import { Exo } from "next/font/google";
+"use client";
 import "./globals.css";
+import { ReactNode, createContext, useState } from "react";
+import AppBar from "./ui/AppBar";
+import Footer from "./ui/Footer";
+import { primaryFont, secondaryFont } from "./ui/fonts";
 
-const secondaryFont = Bruno_Ace({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-secondary",
-});
-const primaryFont = Exo({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-primary",
-});
+const ThemeContext: Context<null | string> = createContext<null | string>(null);
 
-export const metadata: Metadata = {
-  title: "Francky Iside - Web development",
-  description:
-    "Nazywam się Francky Iside. Jestem frontend developerem specjalizującym się w projektowaniu responsywnych, wydajnych stron internetowych, aplikacji SPA i sklepów eCommerce. Wykorzystuję technologie TypeScript, React, Next.js, Php, oraz WordPress.",
-};
+export default function RootLayout({ children }: { children: ReactNode }) {
+  const [theme, setTheme] = useState("dark");
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+  function toggleTheme() {
+    if (theme === "dark") {
+      setTheme("");
+    } else {
+      setTheme("dark");
+    }
+  }
+
   return (
-    <html
-      lang="en"
-      className={`${primaryFont.className} ${secondaryFont.variable}`}
-    >
-      <body>{children}</body>
-    </html>
+    <ThemeContext.Provider value={theme}>
+      <html
+        lang="en"
+        className={`${primaryFont.className} ${secondaryFont.variable} ${theme}`}
+      >
+        <body className="bg-slate-300 text-slate-800 dark:bg-slate-900 dark:text-slate-500">
+          <AppBar toggleTheme={toggleTheme} />
+          <main className="p-4">{children}</main>
+          <Footer />
+        </body>
+      </html>
+    </ThemeContext.Provider>
   );
 }

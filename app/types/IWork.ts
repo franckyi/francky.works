@@ -1,4 +1,5 @@
 export default interface IWork {
+  id: number;
   title: string;
   business: string | null;
   client: string | null;

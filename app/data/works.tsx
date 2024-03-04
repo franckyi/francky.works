@@ -3,6 +3,7 @@ import IWork from "@/app/types/IWork";
 export const worksHeading = "My works";
 export const workList: IWork[] = [
   {
+    id: 0,
     title: "website redesign",
     client: "Norbud",
     business: "Constructions",
@@ -44,6 +45,7 @@ export const workList: IWork[] = [
     designUrl: null,
   },
   {
+    id: 1,
     title: "restaurant website",
     client: "Hassan",
     business: "Gastronomy",
@@ -63,6 +65,7 @@ export const workList: IWork[] = [
     designUrl: null,
   },
   {
+    id: 2,
     title: "modern one-page website",
     client: "Primo MOS",
     business: "Hairstyling",
@@ -83,6 +86,7 @@ export const workList: IWork[] = [
     designUrl: null,
   },
   {
+    id: 3,
     title: "performant frontend app for NBA fans",
     client: "Basket Maniacs",
     business: "Sport",
@@ -96,6 +100,7 @@ export const workList: IWork[] = [
       "https://www.figma.com/file/zXa5Q8IpAgz19Uqle2R4NH/Serwis-NBA?type=design&node-id=0%3A1&mode=design&t=QtLDPxJ0HFTGQ87l-1",
   },
   {
+    id: 4,
     title: "website redesign",
     client: "Godere.pl",
     business: "Tecnology",
@@ -117,6 +122,7 @@ export const workList: IWork[] = [
     designUrl: "https://www.behance.net/gallery/78871491/Godere-Logo",
   },
   {
+    id: 5,
     title: "new home page design",
     client: "Niimbot.pl",
     business: "E-commerce",
@@ -134,6 +140,7 @@ export const workList: IWork[] = [
     designUrl: null,
   },
   {
+    id: 6,
     title: "online shop for warriors",
     client: "Daddy's DSGN",
     business: "E-commerce",
@@ -147,6 +154,7 @@ export const workList: IWork[] = [
       "https://www.figma.com/file/IAJYrobSn8iRPy3q6J6boO/Daddys-ecommerce?type=design&mode=design&t=hSwubaL4lxEmMaJE-1",
   },
   {
+    id: 7,
     title: "elegant company website",
     client: "Classic Meble",
     business: "Home furnishing",
@@ -159,6 +167,7 @@ export const workList: IWork[] = [
     designUrl: null,
   },
   {
+    id: 8,
     title: "performant website",
     client: "G-BIZ Księgowość",
     business: "Accounting",
@@ -171,6 +180,7 @@ export const workList: IWork[] = [
     designUrl: "https://www.behance.net/gallery/70245947/G-BIZ-Logo-Website",
   },
   {
+    id: 9,
     title: "website redesign",
     client: "Dla Maluszka",
     business: "Education",
@@ -183,6 +193,7 @@ export const workList: IWork[] = [
     designUrl: null,
   },
   {
+    id: 10,
     title: "modern company website",
     client: "Sauber Serwis",
     business: "Services",
@@ -195,6 +206,7 @@ export const workList: IWork[] = [
     designUrl: null,
   },
   {
+    id: 11,
     title: "weather app with live background",
     client: "Meteo Livebg",
     business: "Life style",
@@ -230,6 +242,7 @@ export const workList: IWork[] = [
     designUrl: null,
   },
   {
+    id: 12,
     title: "minitool",
     client: "Seconds formatter",
     business: "Utilities",
@@ -242,6 +255,7 @@ export const workList: IWork[] = [
     designUrl: null,
   },
   {
+    id: 13,
     title: "responsive wedding page",
     client: "Tiffania & Justin",
     business: "Life style",
