@@ -15,11 +15,14 @@ export const getHeroText = () => {
         libraries and UI/UX
       </strong>
       . Currently creating custom software and e-commerce solutions. I bring a
-      creative mindset with an eye on aesthetics, SOLID principles, clean code,
-      RWD and Core Web Vitals. Altough I really enjoy Angular, React best fits
-      most of my current clients needs. I&apos;d like to contribute my skills to
-      ambitious, interesting projects. Join me on LinkedIn and feel free to
-      contact me.
+      <strong>
+        {" "}
+        creative mindset with an eye on aesthetics, SOLID principles, clean
+        code, RWD and Core Web Vitals
+      </strong>
+      . Altough I really enjoy Angular, React best fits most of my current
+      clients needs. I&apos;d like to contribute my skills to ambitious,
+      interesting projects. Join me on LinkedIn and feel free to contact me.
     </p>
   );
 };
