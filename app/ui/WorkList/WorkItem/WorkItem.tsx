@@ -8,6 +8,9 @@ interface IWorkItemProps {
 const workItemClasses =
   "my-12 lg:my-24 lg:flex lg:items-center gap-8 lg:gap-16 rounded-sm saturate-100";
 
+const buttonStyle =
+  "py-2 px-4 mr-4 border-2 border-b-8 border-slate-500 dark:border-slate-600 hover:border-slate-900 dark:hover:border-emerald-400 dark:text-slate-200 font-bold hover:rotate-6";
+
 export default function WorkItem({ work }: IWorkItemProps) {
   return (
     <article className={workItemClasses}>
@@ -21,7 +24,10 @@ export default function WorkItem({ work }: IWorkItemProps) {
       />
       <div className="lg:w-2/4">
         <h3 className="mb-2 text-2xl lg:text-2xl dark:text-slate-200 font-semibold font-secondary">
-          <span className="text-emerald-400">{work.client}</span> — {work.title}
+          <span className="text-emerald-500 dark:text-emerald-400">
+            {work.client}
+          </span>{" "}
+          — {work.title}
         </h3>
 
         {work.business && (
@@ -76,7 +82,7 @@ export default function WorkItem({ work }: IWorkItemProps) {
           {work.liveUrl && (
             <a
               href={work.liveUrl}
-              className="py-2 px-4 text-slate-900 font-bold bg-emerald-400 ease-in transition duration-250 hover:bg-amber-400 rounded-full hover:rotate-6 hover:rounded-md"
+              className={buttonStyle}
               target="_blank"
               rel="nofollow noopener noreferrer"
             >
@@ -87,7 +93,7 @@ export default function WorkItem({ work }: IWorkItemProps) {
           {work.gitUrl && (
             <a
               href={work.gitUrl}
-              className="ml-4 py-2 px-4 text-slate-900 font-bold bg-emerald-400 transition ease-in duration-250 hover:bg-amber-400 rounded-full hover:rotate-6 hover:rounded-md"
+              className={buttonStyle}
               target="_blank"
               rel="nofollow noopener noreferrer"
             >
@@ -98,7 +104,7 @@ export default function WorkItem({ work }: IWorkItemProps) {
           {work.designUrl && (
             <a
               href={work.designUrl}
-              className="ml-4 py-2 px-4 text-slate-900 font-bold bg-emerald-400 transition ease-in duration-500 hover:bg-amber-400 rounded-full hover:rotate-6 hover:rounded-sm"
+              className={buttonStyle}
               target="_blank"
               rel="nofollow noopener noreferrer"
             >
