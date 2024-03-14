@@ -8,11 +8,10 @@ const moonIconClasses = "w-6 h-6 text-slate-600 hover:text-slate-500";
 function LightDarkToggleIcon() {
   const theme = useContext(ThemeContext);
   return theme === "dark" ? (
-    <MoonIcon className={moonIconClasses} />
-  ) : (
     <SunIcon className={sunIconClasses} />
+  ) : (
+    <MoonIcon className={moonIconClasses} />
   );
-  // return <SunIcon className="w-6 h-6 text-slate-400" />;
 }
 
 export default LightDarkToggleIcon;
