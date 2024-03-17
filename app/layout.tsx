@@ -1,12 +1,10 @@
 "use client";
 import "./globals.css";
 import { ReactNode, createContext, useState } from "react";
-import AppBar from "./ui/AppBar";
-import Footer from "./ui/Footer";
-import { primaryFont, secondaryFont } from "./ui/fonts";
-import ThemeContext from "./context api/ThemeContext";
-
-// const ThemeContext: Context<null | string> = createContext<null | string>(null);
+import AppBar from "@/components/common/AppBar";
+import Footer from "@/components/common/Footer";
+import { primaryFont, secondaryFont } from "@/app/fonts";
+import ThemeContext from "@/context-api/ThemeContext";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState("dark");

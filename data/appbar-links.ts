@@ -1,10 +1,10 @@
-interface IMenuItem {
+interface Link {
   name: string;
   url: string;
   target: string;
 }
 
-export const menuItems: IMenuItem[] = [
+export const menuItems: Link[] = [
   { name: "GitHub", url: "https://github.com/franckyi", target: "_blank" },
   {
     name: "LinkedIn",

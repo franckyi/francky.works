@@ -1,6 +1,6 @@
 import { worksHeading, workList } from "../../data/works";
 import WorkItem from "./WorkItem/WorkItem";
-import IWork from "@/app/types/IWork";
+import IWork from "@/types/IWork";
 
 const sectionClasses = "max-w-screen-xl lg:mx-auto";
 const headingClasses =

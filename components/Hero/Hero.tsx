@@ -1,6 +1,6 @@
 import Image from "next/image";
 import "./hero.css";
-import "../animations/animate-pulse.css";
+import "@/app/animate-pulse.css";
 import { heroHeading, heroSubheading, getHeroText } from "../../data/hero";
 
 export default function Hero() {

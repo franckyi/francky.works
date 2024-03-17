@@ -1,4 +1,4 @@
-import ThemeContext from "@/app/context api/ThemeContext";
+import ThemeContext from "@/context-api/ThemeContext";
 import { SunIcon, MoonIcon } from "@heroicons/react/24/solid";
 import { useContext } from "react";
 

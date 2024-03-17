@@ -1,4 +1,4 @@
-import IWork from "@/app/types/IWork";
+import IWork from "@/types/IWork";
 
 export const worksHeading = "My works";
 export const workList: IWork[] = [

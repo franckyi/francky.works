@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { menuItems } from "../data/appbar-links";
-import LightDarkToggleIcon from "./common/lightDarkToggleIcon";
+import { menuItems } from "../../data/appbar-links";
+import LightDarkToggleIcon from "./lightDarkToggleIcon";
 import { useContext } from "react";
-import ThemeContext from "../context api/ThemeContext";
+import ThemeContext from "../../context-api/ThemeContext";
 
 const linkClasses =
   "text-sm lg:ml-4 px-2 lg:px-4 py-2 border-2 border-b-8 border-slate-500 dark:border-slate-600 hover:border-slate-900 dark:hover:border-emerald-400";

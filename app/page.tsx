@@ -1,5 +1,5 @@
-import Hero from "./ui/Hero/Hero";
-import WorkList from "./ui/WorkList/WorkList";
+import Hero from "@/components/Hero/Hero";
+import WorkList from "@/components/WorkList/WorkList";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
