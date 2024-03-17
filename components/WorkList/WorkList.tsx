@@ -1,6 +1,6 @@
+import { Work } from "@/types/Work";
 import { worksHeading, workList } from "../../data/works";
 import WorkItem from "./WorkItem/WorkItem";
-import IWork from "@/types/IWork";
 
 const sectionClasses = "max-w-screen-xl lg:mx-auto";
 const headingClasses =
@@ -11,7 +11,7 @@ export default function WorkList() {
     <section className={sectionClasses}>
       <h2 className={headingClasses}>{worksHeading}</h2>
       {workList &&
-        workList.map((item: IWork) => {
+        workList.map((item: Work) => {
           return <WorkItem key={item.id} work={item} />;
         })}
     </section>

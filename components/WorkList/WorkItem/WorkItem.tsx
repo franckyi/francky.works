@@ -1,20 +1,7 @@
+import { Work } from "@/types/Work";
 import Image from "next/image";
 
-interface Work {
-  id: number;
-  title: string;
-  business: string | null;
-  client: string | null;
-  imgUrl: string;
-  desc: string | JSX.Element | null;
-  myRole: string[];
-  stack: string[];
-  gitUrl: string | null;
-  liveUrl: string | null;
-  designUrl: string | null;
-}
-
-interface IWorkItemProps {
+interface WorkItemProps {
   work: Work;
 }
 
@@ -24,7 +11,7 @@ const workItemClasses =
 const buttonStyle =
   "py-2 px-4 mr-4 border-2 border-b-8 border-slate-500 dark:border-slate-600 hover:border-slate-900 dark:hover:border-emerald-400 dark:text-slate-200 font-bold hover:rotate-6";
 
-export default function WorkItem({ work }: IWorkItemProps) {
+export default function WorkItem({ work }: WorkItemProps) {
   return (
     <article className={workItemClasses}>
       <Image
@@ -50,9 +37,9 @@ export default function WorkItem({ work }: IWorkItemProps) {
         )}
 
         {work.desc && (
-          <p className="mt-4 mb-4 text-justify dark:text-slate-300">
+          <div className="mt-4 mb-4 text-justify dark:text-slate-300">
             {work.desc}
-          </p>
+          </div>
         )}
 
         {work.myRole && (

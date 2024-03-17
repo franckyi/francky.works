@@ -1,7 +1,7 @@
-import IWork from "@/types/IWork";
+import { Work } from "@/types/Work";
 
 export const worksHeading = "My works";
-export const workList: IWork[] = [
+export const workList: Work[] = [
   {
     id: 0,
     title: "website redesign",
