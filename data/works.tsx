@@ -41,7 +41,7 @@ export const workList: Work[] = [
       "vercel",
     ],
     gitUrl: "https://github.com/franckyi/norbud-frontend",
-    liveUrl: "https://norbud-frontend.vercel.app/",
+    liveUrl: "https://nor-bud.com/",
     designUrl: null,
   },
   {
