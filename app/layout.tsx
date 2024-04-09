@@ -1,6 +1,6 @@
 "use client";
 import "./globals.css";
-import { ReactNode, createContext, useState } from "react";
+import { ReactNode, useState } from "react";
 import AppBar from "@/components/common/AppBar";
 import Footer from "@/components/common/Footer";
 import { primaryFont, secondaryFont } from "@/app/fonts";
