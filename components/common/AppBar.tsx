@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { menuItems } from "../../data/appbar-links";
-import LightDarkToggleIcon from "./lightDarkToggleIcon";
+import LightDarkToggleIcon from "./LightDarkToggleIcon";
 import { useContext } from "react";
 import ThemeContext from "../../context-api/ThemeContext";
 
