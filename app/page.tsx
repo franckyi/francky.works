@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <Hero />
       Work in progress! Coming back soon..
-      {/* <WorkList /> */}
+      <WorkList />
     </>
   );
 }
