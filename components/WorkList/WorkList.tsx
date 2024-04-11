@@ -1,19 +1,28 @@
 import { Work } from "@/types/Work";
 import { worksHeading, workList } from "../../data/works";
 import WorkItem from "./WorkItem/WorkItem";
+import getWorks from "../lib/getWorks";
 
 const sectionClasses = "max-w-screen-xl lg:mx-auto";
 const headingClasses =
   "my-8 text-3xl lg:text-5xl font-bold dark:text-emerald-400 text-center font-secondary";
 
-export default function WorkList() {
+export default async function WorkList() {
+  const works = await getWorks();
+
   return (
     <section className={sectionClasses}>
       <h2 className={headingClasses}>{worksHeading}</h2>
-      {workList &&
+
+      {works &&
+        works.map((work: Work) => {
+          return <WorkItem key={work.id} work={work} />;
+        })}
+
+      {/* {workList &&
         workList.map((item: Work) => {
           return <WorkItem key={item.id} work={item} />;
-        })}
+        })} */}
     </section>
   );
 }
