@@ -1,6 +1,6 @@
 export default async function getCategory(id: number) {
   const res = await fetch(
-    process.env.API_BASE_URL + "/wp-json/wp/v2/categories/" + id
+    "https://k3g9inpr433.francky.works/wp-json/wp/v2/categories/" + id
   );
 
   if (!res.ok) {

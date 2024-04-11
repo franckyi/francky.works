@@ -1,5 +1,7 @@
+require("dotenv").config();
+
 const TIME_INTERVAL = 86400; // revalidate every 24 h
-const URL = process.env.SECTIONS_ENDPOINT;
+const URL = "https://k3g9inpr433.francky.works/wp-json/wp/v2/sections";
 
 export default async function getSections() {
   if (!URL) {

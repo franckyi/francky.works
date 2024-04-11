@@ -1,5 +1,8 @@
+require("dotenv").config();
+
 const TIME_INTERVAL = 86400; // revalidate every 24 h
-const URL = process.env.WORKS_ENDPOINT + "?per_page=25&order=asc";
+const URL =
+  "https://k3g9inpr433.francky.works/wp-json/wp/v2/works?per_page=25&order=asc";
 
 export default async function getWorks() {
   if (!URL) {

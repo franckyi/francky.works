@@ -11,7 +11,7 @@ export default async function WorkList() {
 
   return (
     <section className={sectionClasses}>
-      <h2 className={headingClasses}>My works</h2>
+      <h2 className={headingClasses}>Recent Works</h2>
       {works &&
         works.map((work: Work) => {
           return <WorkItem key={work.id} work={work} />;
