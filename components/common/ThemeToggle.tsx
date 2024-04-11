@@ -5,7 +5,7 @@ import { useContext } from "react";
 const sunIconClasses = "w-6 h-6 text-slate-400 hover:text-slate-500";
 const moonIconClasses = "w-6 h-6 text-slate-600 hover:text-slate-500";
 
-function LightDarkToggleIcon() {
+export default function ThemeToggle() {
   const theme = useContext(ThemeContext);
   return theme === "dark" ? (
     <SunIcon className={sunIconClasses} />
@@ -13,5 +13,3 @@ function LightDarkToggleIcon() {
     <MoonIcon className={moonIconClasses} />
   );
 }
-
-export default LightDarkToggleIcon;

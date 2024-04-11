@@ -1,19 +1,15 @@
 import Image from "next/image";
 import { menuItems } from "../../data/appbar-links";
-import LightDarkToggleIcon from "./LightDarkToggleIcon";
-import { useContext } from "react";
-import ThemeContext from "../../context-api/ThemeContext";
+import ThemeToggle from "./ThemeToggle";
 
 const linkClasses =
   "text-sm lg:ml-4 px-2 lg:px-4 py-2 border-2 border-b-8 border-slate-500 dark:border-slate-600 hover:border-slate-900 dark:hover:border-emerald-400";
 
-interface AppBarProps {
+type AppBarProps = {
   toggleTheme: () => void;
-}
+};
 
 function AppBar({ toggleTheme }: AppBarProps) {
-  const theme = useContext(ThemeContext);
-
   return (
     <header className="flex w-full justify-between pt-4 pb-8 lg:px-8">
       <Image
@@ -27,7 +23,7 @@ function AppBar({ toggleTheme }: AppBarProps) {
       />
       <div className="flex items-center">
         <button type="button" onClick={toggleTheme} title="toggle theme">
-          <LightDarkToggleIcon />
+          <ThemeToggle />
         </button>
         {menuItems.map((item, index) => {
           return (
