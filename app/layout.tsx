@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <body className="bg-slate-300 text-slate-800 dark:bg-slate-900 dark:text-slate-500">
           <AppBar toggleTheme={toggleTheme} />
           <main className="p-4">{children}</main>
-          {/* <Footer /> */}
+          <Footer />
         </body>
       </html>
     </ThemeContext.Provider>

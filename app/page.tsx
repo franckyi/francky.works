@@ -12,7 +12,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      Work in progress! Coming back soon..
       <WorkList />
     </>
   );
