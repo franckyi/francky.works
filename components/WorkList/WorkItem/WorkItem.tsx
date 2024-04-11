@@ -33,12 +33,10 @@ type WorkItemProps = { work: Work };
 export default function WorkItem({ work }: WorkItemProps) {
   return (
     <article className={workItemClasses}>
-      <Suspense>
-        <Thumbnail
-          href={work._links["wp:featuredmedia"][0].href}
-          alt={work.title.rendered}
-        />
-      </Suspense>
+      <Thumbnail
+        href={work._links["wp:featuredmedia"][0].href}
+        alt={work.title.rendered}
+      />
       <div className="lg:w-2/4">
         {work.meta.subtitle && (
           <h3 className="mb-2 text-2xl lg:text-2xl dark:text-slate-200 font-semibold font-secondary">
@@ -66,19 +64,17 @@ export default function WorkItem({ work }: WorkItemProps) {
             <h4 className="lg:inline lg:mr-4 font-semibold dark:text-emerald-400 text-xs lg:text-base">
               My role
             </h4>
-            <Suspense>
-              {work.categories.map(async (id) => {
-                const category = await getCategory(id);
-                return (
-                  <span
-                    className="my-1 inline-block mr-2 lg:mr-4 px-4 pt-1 pb-2 text-xs lg:text-sm bg-slate-500 dark:bg-slate-800 text-slate-200 capitalize"
-                    key={id}
-                  >
-                    {category.name}
-                  </span>
-                );
-              })}
-            </Suspense>
+            {work.categories.map(async (id) => {
+              const category = await getCategory(id);
+              return (
+                <span
+                  className="my-1 inline-block mr-2 lg:mr-4 px-4 pt-1 pb-2 text-xs lg:text-sm bg-slate-500 dark:bg-slate-800 text-slate-200 capitalize"
+                  key={id}
+                >
+                  {category.name}
+                </span>
+              );
+            })}
           </div>
         )}
 
@@ -87,19 +83,17 @@ export default function WorkItem({ work }: WorkItemProps) {
             <h4 className="lg:inline lg:mr-4 font-semibold dark:text-emerald-400 text-xs lg:text-base">
               Technologies
             </h4>
-            <Suspense>
-              {work.tags.map(async (id) => {
-                const tag = await getTag(id);
-                return (
-                  <span
-                    key={id}
-                    className="my-1 inline-block mr-2 lg:mr-4 px-4 pt-1 pb-2 text-xs lg:text-sm capitalize bg-slate-500 dark:bg-slate-800 text-slate-200"
-                  >
-                    {tag.name}
-                  </span>
-                );
-              })}
-            </Suspense>
+            {work.tags.map(async (id) => {
+              const tag = await getTag(id);
+              return (
+                <span
+                  key={id}
+                  className="my-1 inline-block mr-2 lg:mr-4 px-4 pt-1 pb-2 text-xs lg:text-sm capitalize bg-slate-500 dark:bg-slate-800 text-slate-200"
+                >
+                  {tag.name}
+                </span>
+              );
+            })}
           </div>
         )}
 
