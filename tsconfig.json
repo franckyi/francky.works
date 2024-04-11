@@ -28,7 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/ui/Testimonials/testimonials.ts"
-, "components/lib/getWorks.ts"  ],
+    "app/ui/Testimonials/testimonials.ts",
+    "lib/getWorks.ts"
+  ],
   "exclude": ["node_modules"]
 }
