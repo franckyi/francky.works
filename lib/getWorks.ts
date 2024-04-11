@@ -1,5 +1,5 @@
 const TIME_INTERVAL = 86400; // revalidate every 24 h
-const URL = process.env.WORKS_ENDPOINT;
+const URL = process.env.WORKS_ENDPOINT + "?per_page=25&order=asc";
 
 export default async function getWorks() {
   if (!URL) {
