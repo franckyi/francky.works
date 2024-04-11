@@ -12,7 +12,8 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <WorkList />
+      Work in progress! Coming back soon..
+      {/* <WorkList /> */}
     </>
   );
 }
