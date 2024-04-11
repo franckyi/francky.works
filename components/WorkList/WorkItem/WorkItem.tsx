@@ -1,7 +1,6 @@
 import parse from "html-react-parser";
 import { Work } from "@/types/Work";
 import Image from "next/image";
-import React, { Suspense } from "react";
 import getMedia from "@/lib/getMedia";
 import getTag from "@/lib/getTag";
 import getCategory from "@/lib/getCategory";
