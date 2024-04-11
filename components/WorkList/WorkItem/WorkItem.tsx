@@ -6,15 +6,13 @@ import getMedia from "@/components/lib/getMedia";
 import getTag from "@/components/lib/getTag";
 import getCategory from "@/components/lib/getCategory";
 
-type WorkItemProps = { work: Work };
-type ThumbnailProps = { href: string; alt: string };
-type TagProps = { id: number };
-
 const workItemClasses =
   "my-12 lg:my-24 lg:flex lg:items-center gap-8 lg:gap-16 rounded-sm saturate-100";
 
 const buttonStyle =
   "py-2 px-4 mr-4 border-2 border-b-8 border-slate-500 dark:border-slate-600 hover:border-slate-900 dark:hover:border-emerald-400 dark:text-slate-200 font-bold hover:rotate-6";
+
+type ThumbnailProps = { href: string; alt: string };
 
 async function Thumbnail({ href, alt }: ThumbnailProps) {
   const thumbnail = await getMedia(href);
@@ -29,6 +27,8 @@ async function Thumbnail({ href, alt }: ThumbnailProps) {
     />
   );
 }
+
+type WorkItemProps = { work: Work };
 
 export default function WorkItem({ work }: WorkItemProps) {
   return (
