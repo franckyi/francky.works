@@ -9,12 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@heroicons/react": "^2.1.1",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.15.15",
+    "@mui/material": "^5.15.15",
     "dotenv": "^16.4.5",
+    "html-react-parser": "^5.1.8",
     "next": "^14.0",
     "react": "^18",
-    "react-dom": "^18",
-    "html-react-parser": "^5.1.8"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@types/node": "^20",
