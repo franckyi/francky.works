@@ -1,5 +1,5 @@
 import { Context, createContext } from "react";
 
-const ThemeContext: Context<null | string> = createContext<null | string>(null);
+const ThemeContext: Context<boolean> = createContext<boolean>(false);
 
 export default ThemeContext;

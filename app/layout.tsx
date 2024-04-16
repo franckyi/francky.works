@@ -7,21 +7,24 @@ import { primaryFont, secondaryFont } from "@/app/fonts";
 import ThemeContext from "@/context-api/ThemeContext";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState(true);
 
   function toggleTheme() {
-    if (theme === "dark") {
-      setTheme("");
-    } else {
-      setTheme("dark");
-    }
+    console.log("clicked");
+    setTheme(!theme);
+  }
+
+  function getTheme() {
+    return theme ? " dark" : "";
   }
 
   return (
     <ThemeContext.Provider value={theme}>
       <html
         lang="en"
-        className={`${primaryFont.className} ${secondaryFont.variable} ${theme}`}
+        className={`${primaryFont.className} ${
+          secondaryFont.variable
+        }${getTheme()}`}
       >
         <body className="bg-slate-300 text-slate-800 dark:bg-slate-900 dark:text-slate-500">
           <AppBar toggleTheme={toggleTheme} />

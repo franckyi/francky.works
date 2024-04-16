@@ -1,13 +1,11 @@
 import parse from "html-react-parser";
-import getSections from "@/lib/getSections";
-import Section from "@/types/Section";
 import Image from "next/image";
 import "./hero.css";
 import "@/app/animate-pulse.css";
+import getBio from "@/lib/getBio";
 
 export default async function Hero() {
-  const sections = await getSections();
-  const bio = sections.filter((section: Section) => section.slug === "bio");
+  const bio = await getBio();
 
   return (
     <section className="lg:mx-40 xl:mx-80 flex gap-8 lg:gap-16 flex-col lg:flex-row lg:items-center justify-center">

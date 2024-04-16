@@ -7,7 +7,7 @@ const moonIconClasses = "w-6 h-6 text-slate-600 hover:text-slate-500";
 
 export default function ThemeToggle() {
   const theme = useContext(ThemeContext);
-  return theme === "dark" ? (
+  return theme ? (
     <SunIcon className={sunIconClasses} />
   ) : (
     <MoonIcon className={moonIconClasses} />
