@@ -10,7 +10,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState(true);
 
   function toggleTheme() {
-    console.log("clicked");
     setTheme(!theme);
   }
 
