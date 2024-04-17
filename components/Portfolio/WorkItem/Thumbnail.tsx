@@ -1,10 +1,19 @@
+"use client";
 import getMedia from "@/lib/getMedia";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 type ThumbnailProps = { href: string; alt: string };
 
-export default async function Thumbnail({ href, alt }: ThumbnailProps) {
-  const thumbnail = await getMedia(href);
+export default function Thumbnail({ href, alt }: ThumbnailProps) {
+  const [thumbnail, setThumbnail] = useState<any>(null);
+
+  useEffect(() => {
+    getMedia(href).then((data) => {
+      setThumbnail(data);
+    });
+  }, [href]);
+
   return (
     <Image
       src={thumbnail.media_details.sizes.medium_large.source_url}

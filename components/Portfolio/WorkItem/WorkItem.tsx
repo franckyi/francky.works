@@ -1,11 +1,10 @@
 import parse from "html-react-parser";
 import { Work } from "@/types/Work";
-import getTag from "@/lib/getTag";
-import getCategory from "@/lib/getCategory";
 import Thumbnail from "./Thumbnail";
 import WorkLinks from "./WorkLinks";
 import WorkCategories from "./WorkCategories";
 import WorkTags from "./WorkTags";
+import { Suspense } from "react";
 
 const workItemClasses =
   "my-12 lg:my-24 lg:flex lg:items-center gap-8 lg:gap-16 rounded-sm saturate-100";
@@ -19,6 +18,7 @@ export default function WorkItem({ work }: WorkItemProps) {
         href={work._links["wp:featuredmedia"][0].href}
         alt={work.title.rendered}
       />
+
       <div className="lg:w-2/4">
         {work.meta.subtitle && (
           <h3 className="mb-2 text-2xl lg:text-2xl dark:text-slate-200 font-semibold font-secondary">

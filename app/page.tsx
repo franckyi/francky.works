@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero/Hero";
-import WorkList from "@/components/WorkList/WorkList";
+import Portfolio from "@/components/Portfolio/Portfolio";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <WorkList />
+      <Portfolio />
     </>
   );
 }
