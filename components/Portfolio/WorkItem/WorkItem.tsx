@@ -13,16 +13,18 @@ type WorkItemProps = { work: Work; view: string };
 
 export default function WorkItem({ work, view }: WorkItemProps) {
   return (
-    <article className={workItemClasses}>
+    <article
+      className={`${workItemClasses} ${view === "grid" ? "lg:w-1/3" : ""}`}
+    >
       <Thumbnail
         href={work._links["wp:featuredmedia"][0].href}
         alt={work.title.rendered}
+        view={view}
       />
 
-      {/* <div className={`lg:w-2/4 ${view === "grid" ? "hidden" : ""}`}> */}
       <div
-        className={`lg:w-2/4 ${
-          view === "grid" ? "lg:absolute lg:bg-slate-900/95" : ""
+        className={` ${
+          view === "grid" ? "hidden lg:absolute lg:bg-slate-900/95" : "lg:w-2/4"
         }`}
       >
         {work.meta.subtitle && (

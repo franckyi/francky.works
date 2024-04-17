@@ -4,7 +4,7 @@ import ViewHandler from "./ViewHandler";
 import { useState } from "react";
 import WorkItem from "./WorkItem/WorkItem";
 
-const sectionClasses = "max-w-screen-xl lg:mx-auto";
+const sectionClasses = "lg:mx-auto";
 
 export default function Works({ works }: { works: Work[] }) {
   const [view, setView] = useState("list");
@@ -23,7 +23,13 @@ export default function Works({ works }: { works: Work[] }) {
         handleListViewClick={handleListViewClick}
         handleGridViewClick={handleGridViewClick}
       />
-      <section className={`${sectionClasses} ${view === "grid" ? "" : ""}`}>
+      <section
+        className={`${sectionClasses} ${
+          view === "grid"
+            ? "lg:flex lg:flex-wrap lg:gap-4 lg:w-3/3"
+            : "max-w-screen-xl"
+        }`}
+      >
         {works.map((work: Work) => {
           return <WorkItem key={work.id} work={work} view={view} />;
         })}

@@ -3,9 +3,11 @@ import getMedia from "@/lib/getMedia";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-type ThumbnailProps = { href: string; alt: string };
+const baseClasses =
+  "my-8 rounded-md lg:rounded-2xl shadow-xl shadow-slate-400 dark:shadow-slate-950";
+type ThumbnailProps = { href: string; alt: string; view: string };
 
-export default function Thumbnail({ href, alt }: ThumbnailProps) {
+export default function Thumbnail({ href, alt, view }: ThumbnailProps) {
   const [thumbnail, setThumbnail] = useState<any>(null);
 
   useEffect(() => {
@@ -18,7 +20,7 @@ export default function Thumbnail({ href, alt }: ThumbnailProps) {
     <Image
       src={thumbnail?.media_details?.sizes?.medium_large?.source_url}
       alt={alt}
-      className="my-8 rounded-md lg:rounded-2xl shadow-xl shadow-slate-400 dark:shadow-slate-950"
+      className={`${baseClasses} ${view === "grid" ? "" : ""}`}
       width={645}
       height={365}
       draggable="false"
