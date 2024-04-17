@@ -16,7 +16,7 @@ export default function Thumbnail({ href, alt }: ThumbnailProps) {
 
   return (
     <Image
-      src={thumbnail.media_details.sizes.medium_large.source_url}
+      src={thumbnail?.media_details?.sizes?.medium_large?.source_url}
       alt={alt}
       className="my-8 rounded-md lg:rounded-2xl shadow-xl shadow-slate-400 dark:shadow-slate-950"
       width={645}

@@ -9,9 +9,9 @@ import { Suspense } from "react";
 const workItemClasses =
   "my-12 lg:my-24 lg:flex lg:items-center gap-8 lg:gap-16 rounded-sm saturate-100";
 
-type WorkItemProps = { work: Work };
+type WorkItemProps = { work: Work; view: string };
 
-export default function WorkItem({ work }: WorkItemProps) {
+export default function WorkItem({ work, view }: WorkItemProps) {
   return (
     <article className={workItemClasses}>
       <Thumbnail
@@ -19,7 +19,12 @@ export default function WorkItem({ work }: WorkItemProps) {
         alt={work.title.rendered}
       />
 
-      <div className="lg:w-2/4">
+      {/* <div className={`lg:w-2/4 ${view === "grid" ? "hidden" : ""}`}> */}
+      <div
+        className={`lg:w-2/4 ${
+          view === "grid" ? "lg:absolute lg:bg-slate-900/95" : ""
+        }`}
+      >
         {work.meta.subtitle && (
           <h3 className="mb-2 text-2xl lg:text-2xl dark:text-slate-200 font-semibold font-secondary">
             <span className="text-emerald-500 dark:text-emerald-400">

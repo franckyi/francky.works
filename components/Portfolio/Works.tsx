@@ -18,15 +18,16 @@ export default function Works({ works }: { works: Work[] }) {
   }
 
   return (
-    <section className={`${sectionClasses}${view}`}>
+    <>
       <ViewHandler
         handleListViewClick={handleListViewClick}
         handleGridViewClick={handleGridViewClick}
       />
-      test: {view}
-      {works.map((work: Work) => {
-        return <WorkItem key={work.id} work={work} />;
-      })}
-    </section>
+      <section className={`${sectionClasses} ${view === "grid" ? "" : ""}`}>
+        {works.map((work: Work) => {
+          return <WorkItem key={work.id} work={work} view={view} />;
+        })}
+      </section>
+    </>
   );
 }
