@@ -35,7 +35,7 @@ export default function WorkItem({ work, view }: WorkItemProps) {
           <WorkModal
             title={work.title.rendered}
             subTitle={work.meta.subtitle}
-            desc={parse(work.content.rendered)}
+            desc={work.content.rendered}
             handleHidden={handleHidden}
           />
           <WorkLinks meta={work.meta} buttonColor="primary" />

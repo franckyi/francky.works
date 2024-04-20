@@ -1,4 +1,4 @@
-"use client";
+import parse from "html-react-parser";
 import * as React from "react";
 import { styled, css } from "@mui/system";
 import { Modal as BaseModal } from "@mui/base/Modal";
@@ -8,7 +8,7 @@ import { Button } from "@mui/base/Button";
 type WorkModalProps = {
   title: string;
   subTitle: string;
-  desc: JSX.Element;
+  desc: string;
   handleHidden: () => void;
 };
 
@@ -18,6 +18,7 @@ export default function WorkModal({
   desc,
   handleHidden,
 }: WorkModalProps) {
+  const description = parse(desc);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
@@ -47,7 +48,7 @@ export default function WorkModal({
               {title} - <span>{subTitle}</span>
             </h2>
             <p id="transition-modal-description" className="modal-description">
-              {desc}
+              {description}
             </p>
           </ModalContent>
         </Fade>
