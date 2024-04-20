@@ -14,7 +14,7 @@ export default function WorkItem({ work, view }: WorkItemProps) {
   return (
     <article
       className={`${workItemClasses} ${
-        view === "grid" ? "lg:w-1/3 lg:my-4" : "lg:my-24"
+        view === "grid" ? "lg:w-[360px] lg:my-4" : "lg:my-24"
       }`}
     >
       <Thumbnail
