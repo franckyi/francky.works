@@ -1,15 +1,16 @@
 import ThemeContext from "@/context-api/ThemeContext";
-import { SunIcon, MoonIcon } from "@heroicons/react/24/solid";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { useContext } from "react";
 
-const sunIconClasses = "w-6 h-6 text-gray hover:text-accent";
+const sunIconClasses = "w-6 h-6 text-lightGray hover:text-accent";
 const moonIconClasses = "w-6 h-6 text-lightGray hover:text-accent";
 
 export default function ThemeToggle() {
   const theme = useContext(ThemeContext);
   return theme ? (
-    <SunIcon className={sunIconClasses} />
+    <LightModeIcon className={sunIconClasses} />
   ) : (
-    <MoonIcon className={moonIconClasses} />
+    <DarkModeIcon className={moonIconClasses} />
   );
 }

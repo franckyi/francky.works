@@ -1,4 +1,3 @@
-// "use client";
 import TableRowsSharpIcon from "@mui/icons-material/TableRowsSharp";
 import ViewModuleSharpIcon from "@mui/icons-material/ViewModuleSharp";
 
