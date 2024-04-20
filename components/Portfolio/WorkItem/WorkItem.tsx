@@ -78,7 +78,7 @@ export default function WorkItem({ work, view }: WorkItemProps) {
 
         {work.tags.length > 0 && <WorkTags tags={work.tags} />}
 
-        <WorkLinks meta={work.meta} />
+        <WorkLinks meta={work.meta} buttonColor="" />
       </div>
     </article>
   );

@@ -6,7 +6,7 @@ type PropTypes = {
   buttonColor: string;
 };
 
-export default function WorkLinks({ meta, buttonColor }: PropTypes) {
+export default function WorkLinks({ meta, buttonColor = "" }: PropTypes) {
   let color = "";
   if (buttonColor === "primary") {
     color = "bg-primary";
