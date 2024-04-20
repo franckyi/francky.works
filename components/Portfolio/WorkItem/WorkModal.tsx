@@ -12,7 +12,12 @@ type WorkModalProps = {
   handleHidden: () => void;
 };
 
-export default function WorkModal({ title, subTitle, desc, handleHidden }: WorkModalProps) {
+export default function WorkModal({
+  title,
+  subTitle,
+  desc,
+  handleHidden,
+}: WorkModalProps) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
@@ -53,6 +58,7 @@ export default function WorkModal({ title, subTitle, desc, handleHidden }: WorkM
 
 const Backdrop = React.forwardRef<HTMLDivElement, { open?: boolean }>(
   (props, ref) => {
+    const displayName = Backdrop.displayName ?? "Backdrop";
     const { open, ...other } = props;
     return (
       <Fade in={open}>
