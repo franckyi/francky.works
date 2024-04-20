@@ -19,15 +19,23 @@ export default async function Hero() {
         priority
       />
       <div className="max-lg:bottom-0 lg:-bottom-2">
-        <div className="max-lg:text-2xl lg:text-5xl font-bold dark:text-emerald-400 font-secondary hover:animate-pulse">
-          <span className="text-slate-500 animate-pulse">{"<"}</span>
-          {bio[0].meta.full_name}
-          <span className="text-slate-500 animate-pulse">{" />"}</span>
+        <div className="max-lg:text-2xl lg:text-5xl font-bold font-secondary">
+          <span className="text-lightGray dark:text-gray animate-pulse">
+            {"<"}
+          </span>
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent">
+            {bio[0].meta.full_name}
+          </span>
+          <span className="text-lightGray dark:text-gray animate-pulse">
+            {" />"}
+          </span>
         </div>
-        <div className="mt-4 mb-8 max-lg:text-xl lg:text-2xl dark:text-slate-400">
+        <div className="mt-4 mb-8 max-lg:text-xl lg:text-2xl text-dark dark:text-light">
           {bio[0].meta.job_position}
         </div>
-        {parse(bio[0].content.rendered)}
+        <div className="dark:text-lightGray">
+          {parse(bio[0].content.rendered)}
+        </div>
       </div>
     </section>
   );

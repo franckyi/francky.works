@@ -4,17 +4,18 @@ import Thumbnail from "./Thumbnail";
 import WorkLinks from "./WorkLinks";
 import WorkCategories from "./WorkCategories";
 import WorkTags from "./WorkTags";
-import { Suspense } from "react";
 
 const workItemClasses =
-  "my-12 lg:my-24 lg:flex lg:items-center gap-8 lg:gap-16 rounded-sm saturate-100";
+  "my-12 lg:flex lg:items-center gap-8 lg:gap-16 rounded-sm";
 
 type WorkItemProps = { work: Work; view: string };
 
 export default function WorkItem({ work, view }: WorkItemProps) {
   return (
     <article
-      className={`${workItemClasses} ${view === "grid" ? "lg:w-1/3" : ""}`}
+      className={`${workItemClasses} ${
+        view === "grid" ? "lg:w-1/3 lg:my-4" : "lg:my-24"
+      }`}
     >
       <Thumbnail
         href={work._links["wp:featuredmedia"][0].href}
@@ -24,26 +25,24 @@ export default function WorkItem({ work, view }: WorkItemProps) {
 
       <div
         className={` ${
-          view === "grid" ? "hidden lg:absolute lg:bg-slate-900/95" : "lg:w-2/4"
+          view === "grid" ? "hidden lg:absolute lg:bg-dark/95" : "lg:w-2/4"
         }`}
       >
         {work.meta.subtitle && (
-          <h3 className="mb-2 text-2xl lg:text-2xl dark:text-slate-200 font-semibold font-secondary">
-            <span className="text-emerald-500 dark:text-emerald-400">
-              {parse(work.title.rendered)}
-            </span>{" "}
-            — {work.meta.subtitle}
+          <h3 className="mb-2 text-2xl lg:text-2xl dark:text-light font-semibold font-secondary">
+            <span className="text-primary">{parse(work.title.rendered)}</span> —{" "}
+            {work.meta.subtitle}
           </h3>
         )}
 
         {work.meta.industry && (
-          <span className="text-sm text-slate-500 uppercase">
+          <span className="text-sm text-gray uppercase">
             {work.meta.industry}
           </span>
         )}
 
         {work.content.rendered && (
-          <div className="mt-4 mb-4 text-justify dark:text-slate-300">
+          <div className="my-4 text-justify dark:text-lightGray">
             {parse(work.content.rendered)}
           </div>
         )}

@@ -3,8 +3,7 @@ import getMedia from "@/lib/getMedia";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const baseClasses =
-  "my-8 rounded-md lg:rounded-2xl shadow-xl shadow-slate-400 dark:shadow-slate-950";
+const baseClasses = "my-8 rounded-md lg:rounded-2xl shadow-xl shadow-dark";
 type ThumbnailProps = { href: string; alt: string; view: string };
 
 export default function Thumbnail({ href, alt, view }: ThumbnailProps) {

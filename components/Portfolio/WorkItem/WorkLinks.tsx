@@ -1,5 +1,5 @@
 const buttonStyle =
-  "py-2 px-4 mr-4 border-2 border-b-8 border-slate-500 dark:border-slate-600 hover:border-slate-900 dark:hover:border-emerald-400 dark:text-slate-200 font-bold hover:rotate-6";
+  "py-2 px-4 mr-4 border-2 border-b-8 border-primary dark:border-primary hover:border-accent dark:hover:border-accent hover:bg-gradient-to-r from-primary hover:text-light via-secondary to-accent font-bold hover:rotate-6";
 
 type WorkMeta = { live: string; code: string; design: string };
 

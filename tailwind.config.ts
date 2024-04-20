@@ -10,10 +10,16 @@ const config: Config = {
   plugins: [],
   theme: {
     colors: {
+      transparent: "transparent",
       primary: "#833ab4",
       secondary: "#fd1d1d",
       accent: "#fcb045",
       dark: "#0F172A",
+      light: "#dfdce1",
+      gray: "#777",
+      lightGray: "#999",
+      labelDark: "#162342",
+      labelLight: "#d2cdd6",
     },
   },
 };

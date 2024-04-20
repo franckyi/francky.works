@@ -1,5 +1,5 @@
 .animate-pulse {
-  animation: pulse 7s ease-out infinite;
+  animation: pulse 5s ease-out infinite;
 }
 
 @keyframes pulse {

@@ -2,8 +2,7 @@ import CategoryLabel from "./CategoryLabel";
 
 const heading = {
   text: "My role",
-  classes:
-    "lg:inline lg:mr-4 font-semibold dark:text-emerald-400 text-xs lg:text-base",
+  classes: "lg:inline lg:mr-4 font-semibold text-xs lg:text-base",
 };
 
 type PropsType = {

@@ -25,7 +25,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           secondaryFont.variable
         }${getTheme()}`}
       >
-        <body className="bg-slate-300 text-slate-800 dark:bg-slate-900 dark:text-slate-500">
+        <body className="bg-light text-dark dark:bg-dark dark:text-light">
           <AppBar toggleTheme={toggleTheme} />
           <main className="p-4">{children}</main>
           <Footer />

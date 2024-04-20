@@ -4,7 +4,7 @@ import Works from "./Works";
 const heading = {
   text: "Recent Works",
   classes:
-    "lg:mt-32 my-8 text-3xl lg:text-5xl font-bold dark:text-emerald-400 text-center font-secondary",
+    "lg:mt-32 my-8 text-3xl lg:text-5xl font-bold text-primary text-center font-secondary",
 };
 
 export default async function Portfolio() {

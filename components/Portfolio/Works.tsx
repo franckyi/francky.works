@@ -26,8 +26,8 @@ export default function Works({ works }: { works: Work[] }) {
       <section
         className={`${sectionClasses} ${
           view === "grid"
-            ? "lg:flex lg:flex-wrap lg:gap-4 lg:w-3/3"
-            : "max-w-screen-xl"
+            ? "lg:flex lg:flex-wrap lg:gap-1 lg:w-3/3"
+            : "max-w-screen-xl lg:gap-4"
         }`}
       >
         {works.map((work: Work) => {
