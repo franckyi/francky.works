@@ -30,8 +30,14 @@ export default function WorkItem({ work, view }: WorkItemProps) {
       onMouseEnter={handleHidden}
       onMouseLeave={handleHidden}
     >
+      <Thumbnail
+        href={work._links["wp:featuredmedia"][0].href}
+        alt={work.title.rendered}
+        view={view}
+        hidden={hidden}
+      />
       {view === "grid" && (
-        <div className={`lg:absolute lg:p-4 ${hidden ? "hidden" : ""}`}>
+        <div className={`max-md:mt-4 lg:absolute lg:p-4 ${hidden ? "hidden" : ""}`}>
           <WorkModal
             title={work.title.rendered}
             subTitle={work.meta.subtitle}
@@ -41,13 +47,6 @@ export default function WorkItem({ work, view }: WorkItemProps) {
           <WorkLinks meta={work.meta} buttonColor="primary" />
         </div>
       )}
-      <Thumbnail
-        href={work._links["wp:featuredmedia"][0].href}
-        alt={work.title.rendered}
-        view={view}
-        hidden={hidden}
-      />
-
       <div
         className={` ${
           view === "grid" ? "hidden lg:absolute lg:bg-dark/95" : "lg:w-2/4"
