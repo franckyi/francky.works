@@ -8,5 +8,13 @@ const config: Config = {
   ],
   darkMode: "class",
   plugins: [],
+  theme: {
+    colors: {
+      primary: "#833ab4",
+      secondary: "#fd1d1d",
+      accent: "#fcb045",
+      dark: "#0F172A",
+    },
+  },
 };
 export default config;
