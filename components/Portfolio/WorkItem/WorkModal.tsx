@@ -1,17 +1,30 @@
+"use client";
 import * as React from "react";
 import { styled, css } from "@mui/system";
 import { Modal as BaseModal } from "@mui/base/Modal";
 import Fade from "@mui/material/Fade";
 import { Button } from "@mui/base/Button";
 
-export default function WorkModal() {
+type WorkModalProps = {
+  title: string;
+  subTitle: string;
+  desc: JSX.Element;
+  handleHidden: () => void;
+};
+
+export default function WorkModal({ title, subTitle, desc, handleHidden }: WorkModalProps) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setOpen(false);
+    handleHidden();
+  };
 
   return (
     <div>
-      <TriggerButton onClick={handleOpen}>Open modal</TriggerButton>
+      <TriggerButton onClick={handleOpen} className="bg-light">
+        Read more
+      </TriggerButton>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -22,11 +35,14 @@ export default function WorkModal() {
       >
         <Fade in={open}>
           <ModalContent sx={style}>
-            <h2 id="transition-modal-title" className="modal-title">
-              Text in a child modal
+            <h2
+              id="transition-modal-title"
+              className="modal-title font-bold text-primary"
+            >
+              {title} - <span>{subTitle}</span>
             </h2>
             <p id="transition-modal-description" className="modal-description">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              {desc}
             </p>
           </ModalContent>
         </Fade>

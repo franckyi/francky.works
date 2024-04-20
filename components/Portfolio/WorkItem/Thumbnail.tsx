@@ -4,10 +4,27 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const baseClasses = "rounded-md lg:rounded-2xl shadow-xl shadow-dark";
-type ThumbnailProps = { href: string; alt: string; view: string };
+type ThumbnailProps = {
+  href: string;
+  alt: string;
+  view: string;
+  hidden: boolean;
+};
 
-export default function Thumbnail({ href, alt, view }: ThumbnailProps) {
+export default function Thumbnail({ href, alt, view, hidden }: ThumbnailProps) {
   const [thumbnail, setThumbnail] = useState<any>(null);
+
+  function getOpacity() {
+    if (hidden) {
+      return "bg-dark/50";
+    } else {
+      return "";
+    }
+  }
+
+  function getMargin() {
+    return view === "grid" ? "my-0" : "my-8 ";
+  }
 
   useEffect(() => {
     getMedia(href).then((data) => {
@@ -19,7 +36,7 @@ export default function Thumbnail({ href, alt, view }: ThumbnailProps) {
     <Image
       src={thumbnail?.media_details?.sizes?.medium_large?.source_url}
       alt={alt}
-      className={`${baseClasses} ${view === "grid" ? "my-0" : "my-8 "}`}
+      className={`${baseClasses} ${getMargin()} ${getOpacity()}`}
       width={645}
       height={365}
       draggable="false"

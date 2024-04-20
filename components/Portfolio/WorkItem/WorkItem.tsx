@@ -1,9 +1,12 @@
+"use client";
 import parse from "html-react-parser";
 import { Work } from "@/types/Work";
 import Thumbnail from "./Thumbnail";
 import WorkLinks from "./WorkLinks";
 import WorkCategories from "./WorkCategories";
 import WorkTags from "./WorkTags";
+import WorkModal from "./WorkModal";
+import { useState } from "react";
 
 const workItemClasses =
   "my-12 lg:flex lg:items-center gap-8 lg:gap-16 rounded-sm";
@@ -11,16 +14,38 @@ const workItemClasses =
 type WorkItemProps = { work: Work; view: string };
 
 export default function WorkItem({ work, view }: WorkItemProps) {
+  const [hidden, setHidden] = useState(true);
+
+  function handleHidden() {
+    if (view === "grid") {
+      setHidden(!hidden);
+    }
+  }
+
   return (
     <article
       className={`${workItemClasses} ${
         view === "grid" ? "lg:w-[360px] lg:my-4" : "lg:my-24"
       }`}
+      onMouseEnter={handleHidden}
+      onMouseLeave={handleHidden}
     >
+      {view === "grid" && (
+        <div className={`lg:absolute lg:p-4 ${hidden ? "hidden" : ""}`}>
+          <WorkModal
+            title={work.title.rendered}
+            subTitle={work.meta.subtitle}
+            desc={parse(work.content.rendered)}
+            handleHidden={handleHidden}
+          />
+          <WorkLinks meta={work.meta} buttonColor="primary" />
+        </div>
+      )}
       <Thumbnail
         href={work._links["wp:featuredmedia"][0].href}
         alt={work.title.rendered}
         view={view}
+        hidden={hidden}
       />
 
       <div
