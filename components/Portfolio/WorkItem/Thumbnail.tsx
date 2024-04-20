@@ -16,9 +16,9 @@ export default function Thumbnail({ href, alt, view, hidden }: ThumbnailProps) {
 
   function getOpacity() {
     if (hidden) {
-      return "bg-dark/50";
-    } else {
       return "";
+    } else {
+      return "bg-dark bg-opacity-90"; // TODO: ADD DARK LAYER OVER IMG
     }
   }
 
