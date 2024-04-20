@@ -9,7 +9,7 @@ type PropTypes = {
 export default function WorkLinks({ meta, buttonColor = "" }: PropTypes) {
   let color = "";
   if (buttonColor === "primary") {
-    color = "bg-primary";
+    color = "bg-primary text-light";
   }
 
   return (
