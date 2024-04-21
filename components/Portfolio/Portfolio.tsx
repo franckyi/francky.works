@@ -1,8 +1,8 @@
 import getWorks from "@/lib/getWorks";
-import Works from "./Works";
+import CategoryFilter from "./CategoryFilter/CategoryFilter";
 
 const heading = {
-  text: "Recent Works",
+  text: "Works",
   classes:
     "lg:mt-32 my-8 text-3xl lg:text-5xl font-bold text-primary text-center font-secondary",
 };
@@ -13,7 +13,7 @@ export default async function Portfolio() {
   return (
     <>
       <h2 className={heading.classes}>{heading.text}</h2>
-      <Works works={works} />
+      <CategoryFilter works={works} />
     </>
   );
 }
