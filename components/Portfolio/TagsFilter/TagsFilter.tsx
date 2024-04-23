@@ -2,33 +2,37 @@ import * as React from "react";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import FaceIcon from "@mui/icons-material/Face";
+import { Tag } from "@/types/Tag";
+import Avatar from "@mui/material/Avatar";
 
 const chipClasses = "text-dark dark:text-light";
 
-const chipList = [
-  { id: 0, label: "React", icon: <FaceIcon /> },
-  { id: 1, label: "Next.js", icon: <FaceIcon /> },
-  { id: 2, label: "Node.js", icon: <FaceIcon /> },
-  { id: 3, label: "Angular", icon: <FaceIcon /> },
-  { id: 4, label: "Rest API", icon: <FaceIcon /> },
-  { id: 5, label: "Headless WordPress", icon: <FaceIcon /> },
-  { id: 6, label: "E-commerce", icon: <FaceIcon /> },
-  { id: 7, label: "Vanilla JS", icon: <FaceIcon /> },
-  { id: 8, label: "HTML/CSS", icon: <FaceIcon /> },
-];
+type TagsFilterProps = {
+  tags: Tag[];
+};
 
-export default function TagsFilter() {
+export default function TagsFilter({ tags }: TagsFilterProps) {
   return (
-    <Stack direction="row" spacing={1}>
-      {chipList.map((chip) => {
+    <Stack direction="row" flexWrap={"wrap"} spacing={1} gap={1}>
+      {tags.map((tag) => {
+        let fileName = tag.slug.includes("adobe")
+          ? "adobe"
+          : tag.slug.includes("affinity")
+          ? "affinity"
+          : tag.slug.includes("wordpress") || tag.slug.includes("woo")
+          ? "wordpress"
+          : tag.slug;
+
         return (
           <Chip
-            key={chip.id}
-            icon={chip.icon}
-            label={chip.label}
+            key={tag.id}
+            avatar={
+              <Avatar alt={tag.name} src={`/img/icons/${fileName}.svg`} />
+            }
+            label={tag.name}
             className={chipClasses}
-            color="primary"
             variant="outlined"
+            size="small"
           />
         );
       })}

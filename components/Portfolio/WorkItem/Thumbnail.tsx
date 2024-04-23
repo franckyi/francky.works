@@ -9,7 +9,8 @@ function ThumbnailSkeleton() {
   );
 }
 
-const baseClasses = "rounded-md lg:rounded-2xl shadow-xl shadow-dark/30 dark:shadow-primary/25";
+const baseClasses =
+  "rounded-md lg:rounded-2xl shadow-xl shadow-dark/30 dark:shadow-primary/25";
 type ThumbnailProps = {
   href: string;
   alt: string;

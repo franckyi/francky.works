@@ -1,5 +1,6 @@
 "use client";
 import getTag from "@/lib/getTag";
+import { Tag } from "@/types/Tag";
 import { useEffect, useState } from "react";
 
 const classes =
@@ -14,5 +15,5 @@ export default function TagLabel({ tagId }: { tagId: number }) {
     });
   }, [tagId]);
 
-  return <span className={classes}>{tag?.name}</span>;
+  return tag && <span className={classes}>{tag.name}</span>;
 }

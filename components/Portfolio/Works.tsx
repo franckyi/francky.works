@@ -5,14 +5,16 @@ import { useState } from "react";
 import WorkItem from "./WorkItem/WorkItem";
 import TagsFilter from "./TagsFilter/TagsFilter";
 import Stack from "@mui/material/Stack";
+import { Tag } from "@/types/Tag";
 
-const sectionClasses = "lg:mx-auto";
+const sectionClasses = "lg:mx-auto lg:mt-16";
 
 type WorkProps = {
   works: Work[];
+  tags: Tag[];
 };
 
-export default function Works({ works }: WorkProps) {
+export default function Works({ works, tags }: WorkProps) {
   const [view, setView] = useState("list");
   const handleListViewClick = () => setView("list");
   const handleGridViewClick = () => setView("grid");
@@ -20,11 +22,11 @@ export default function Works({ works }: WorkProps) {
   return (
     <>
       <Stack direction="row" spacing={1}>
+        <TagsFilter tags={tags} />
         <ViewHandler
           handleListViewClick={handleListViewClick}
           handleGridViewClick={handleGridViewClick}
         />
-        <TagsFilter />
       </Stack>
       <section
         className={`${sectionClasses} ${

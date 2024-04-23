@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Works from "../Works";
 import { Work } from "@/types/Work";
+import { Tag } from "@/types/Tag";
 import { categories } from "./categories";
 
 interface TabPanelProps {
@@ -41,7 +42,9 @@ function a11yProps(index: number) {
   };
 }
 
-export default function CategoryFilter({ works }: { works: Work[] }) {
+type CategoryFilterProps = { works: Work[]; tags: Tag[] };
+
+export default function CategoryFilter({ works, tags }: CategoryFilterProps) {
   const [value, setValue] = React.useState(0);
   const [filteredWorks, setFilteredWorks] = React.useState(works);
 
@@ -82,7 +85,7 @@ export default function CategoryFilter({ works }: { works: Work[] }) {
       {categories.map((category) => {
         return (
           <CustomTabPanel key={category.id} value={value} index={category.id}>
-            <Works works={filteredWorks} />
+            <Works works={filteredWorks} tags={tags} />
           </CustomTabPanel>
         );
       })}
