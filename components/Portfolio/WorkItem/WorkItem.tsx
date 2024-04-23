@@ -1,4 +1,3 @@
-"use client";
 import parse from "html-react-parser";
 import { Work } from "@/types/Work";
 import Thumbnail from "./Thumbnail";
@@ -37,7 +36,9 @@ export default function WorkItem({ work, view }: WorkItemProps) {
         hidden={hidden}
       />
       {view === "grid" && (
-        <div className={`max-md:mt-4 lg:absolute lg:p-4 ${hidden ? "hidden" : ""}`}>
+        <div
+          className={`max-md:mt-4 lg:absolute lg:p-4 ${hidden ? "hidden" : ""}`}
+        >
           <WorkModal
             title={work.title.rendered}
             subTitle={work.meta.subtitle}

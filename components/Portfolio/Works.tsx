@@ -1,7 +1,7 @@
 "use client";
 import { Work } from "@/types/Work";
 import ViewHandler from "./ViewHandler";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import WorkItem from "./WorkItem/WorkItem";
 import TagsFilter from "./TagsFilter/TagsFilter";
 import Stack from "@mui/material/Stack";

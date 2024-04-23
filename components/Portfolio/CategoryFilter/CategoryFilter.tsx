@@ -69,7 +69,7 @@ export default function CategoryFilter({ works }: { works: Work[] }) {
           {categories.map((category) => {
             return (
               <Tab
-                className="text-light"
+                className="text-dark dark:text-light"
                 key={category.id}
                 label={category.label}
                 {...a11yProps(category.id)}
