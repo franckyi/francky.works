@@ -26,11 +26,7 @@ function CustomTabPanel(props: TabPanelProps) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
+      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
     </div>
   );
 }
@@ -56,31 +52,28 @@ export default function CategoryFilter({ works, tags }: CategoryFilterProps) {
       const filteredObjects = works.filter((work) =>
         work.categories.includes(categories[newValue].wp_cat)
       );
-      console.log("filtered works", filteredObjects);
       setFilteredWorks(filteredObjects);
     }
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          aria-label="basic tabs example"
-        >
-          {categories.map((category) => {
-            return (
-              <Tab
-                className="text-dark dark:text-light"
-                key={category.id}
-                label={category.label}
-                {...a11yProps(category.id)}
-              />
-            );
-          })}
-        </Tabs>
-      </Box>
+    <>
+      <Tabs
+        value={value}
+        onChange={handleChange}
+        aria-label="basic tabs example"
+      >
+        {categories.map((category) => {
+          return (
+            <Tab
+              className="text-dark dark:text-light"
+              key={category.id}
+              label={category.label}
+              {...a11yProps(category.id)}
+            />
+          );
+        })}
+      </Tabs>
 
       {categories.map((category) => {
         return (
@@ -89,6 +82,6 @@ export default function CategoryFilter({ works, tags }: CategoryFilterProps) {
           </CustomTabPanel>
         );
       })}
-    </Box>
+    </>
   );
 }
