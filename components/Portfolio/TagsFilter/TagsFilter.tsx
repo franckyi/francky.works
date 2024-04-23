@@ -3,7 +3,7 @@ import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import FaceIcon from "@mui/icons-material/Face";
 
-const chipClasses = "text-light";
+const chipClasses = "text-dark dark:text-light";
 
 const chipList = [
   { id: 0, label: "React", icon: <FaceIcon /> },
@@ -19,7 +19,7 @@ const chipList = [
 
 export default function TagsFilter() {
   return (
-    <Stack direction="row" spacing={1} className="text-light">
+    <Stack direction="row" spacing={1}>
       {chipList.map((chip) => {
         return (
           <Chip
