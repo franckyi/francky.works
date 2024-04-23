@@ -5,3 +5,15 @@
 .font-secondary {
   font-family: var(--font-secondary);
 }
+
+:root {
+  --primary: #833ab4;
+}
+
+ul {
+  list-style-type: square;
+}
+
+li::marker {
+  color: var(--primary);
+}
