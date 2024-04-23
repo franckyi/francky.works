@@ -15,9 +15,6 @@ export default async function Portfolio() {
   return (
     <>
       <h2 className={heading.classes}>{heading.text}</h2>
-      {/* {tags.map((tag: any) => {
-        return <p key={tag.id}>{tag.name}</p>;
-      })} */}
       <CategoryFilter works={works} tags={tags} />
     </>
   );
