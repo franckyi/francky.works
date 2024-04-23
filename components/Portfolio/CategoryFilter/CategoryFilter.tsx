@@ -43,15 +43,20 @@ function a11yProps(index: number) {
 
 export default function CategoryFilter({ works }: { works: Work[] }) {
   const [value, setValue] = React.useState(0);
+  const [filteredWorks, setFilteredWorks] = React.useState(works);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
+    if (newValue === 0) {
+      setFilteredWorks(works);
+    } else {
+      const filteredObjects = works.filter((work) =>
+        work.categories.includes(categories[newValue].wp_cat)
+      );
+      console.log("filtered works", filteredObjects);
+      setFilteredWorks(filteredObjects);
+    }
   };
-
-  React.useEffect(() => {
-    console.log("works", works);
-    // console.log("works", works.filter((work) => work.categoryId === 1));
-  });
 
   return (
     <Box sx={{ width: "100%" }}>
@@ -77,7 +82,7 @@ export default function CategoryFilter({ works }: { works: Work[] }) {
       {categories.map((category) => {
         return (
           <CustomTabPanel key={category.id} value={value} index={category.id}>
-            <Works works={works} category={category} />
+            <Works works={filteredWorks} />
           </CustomTabPanel>
         );
       })}

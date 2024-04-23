@@ -10,28 +10,12 @@ const sectionClasses = "lg:mx-auto";
 
 type WorkProps = {
   works: Work[];
-  category: {
-    id: number;
-    label: string;
-  };
 };
 
-export default function Works({ works, category }: WorkProps) {
+export default function Works({ works }: WorkProps) {
   const [view, setView] = useState("list");
   const handleListViewClick = () => setView("list");
   const handleGridViewClick = () => setView("grid");
-  const [filteredWorks, setFilteredWorks] = useState(works);
-
-  useEffect(() => {
-    if (category.id === 0) {
-      setFilteredWorks(works);
-      // return;
-    } else {
-      const data = works.filter((work) => work.categories.includes(26));
-      setFilteredWorks(data);
-      console.log("data", data);
-    }
-  }, [works, category, filteredWorks]);
 
   return (
     <>
@@ -49,7 +33,7 @@ export default function Works({ works, category }: WorkProps) {
             : "max-w-screen-xl lg:gap-4"
         }`}
       >
-        {filteredWorks.map((work: Work) => {
+        {works.map((work: Work) => {
           return <WorkItem key={work.id} work={work} view={view} />;
         })}
       </section>
