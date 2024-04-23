@@ -18,7 +18,9 @@ export default function TagsFilter({ tags }: TagsFilterProps) {
           ? "adobe"
           : tag.slug.includes("affinity")
           ? "affinity"
-          : tag.slug.includes("wordpress") || tag.slug.includes("woo")
+          : tag.slug.includes("wordpress") ||
+            tag.slug.includes("woo") ||
+            tag.slug.includes("headless")
           ? "wordpress"
           : tag.slug;
 
