@@ -8,6 +8,7 @@ const heading = {
     "lg:mt-32 my-8 text-3xl lg:text-5xl font-bold text-primary text-center font-secondary",
 };
 
+
 export default async function Portfolio() {
   const works = await getWorks();
   const tags = await getTagList();

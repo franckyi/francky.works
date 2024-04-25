@@ -8,9 +8,15 @@ const chipClasses = "text-dark dark:text-light";
 
 type TagsFilterProps = {
   tags: Tag[];
+  activeTags: number[];
+  handleActiveTagsChange: (arg0: number) => void;
 };
 
-export default function TagsFilter({ tags }: TagsFilterProps) {
+export default function TagsFilter({
+  tags,
+  activeTags,
+  handleActiveTagsChange,
+}: TagsFilterProps) {
   return (
     <Stack direction="row" flexWrap={"wrap"} spacing={1} gap={1}>
       {tags.map((tag) => {
@@ -26,6 +32,8 @@ export default function TagsFilter({ tags }: TagsFilterProps) {
 
         return (
           <Chip
+            clickable
+            onClick={() => handleActiveTagsChange(tag.id)}
             key={tag.id}
             avatar={
               <Avatar alt={tag.name} src={`/img/icons/${fileName}.svg`} />

@@ -12,9 +12,16 @@ const sectionClasses = "lg:mx-auto lg:mt-16";
 type WorkProps = {
   works: Work[];
   tags: Tag[];
+  activeTags: number[];
+  handleActiveTagsChange: (arg0: number) => void;
 };
 
-export default function Works({ works, tags }: WorkProps) {
+export default function Works({
+  works,
+  tags,
+  activeTags,
+  handleActiveTagsChange,
+}: WorkProps) {
   const [view, setView] = useState("list");
   const handleListViewClick = () => setView("list");
   const handleGridViewClick = () => setView("grid");
@@ -22,7 +29,11 @@ export default function Works({ works, tags }: WorkProps) {
   return (
     <>
       <Stack direction="row" spacing={1}>
-        <TagsFilter tags={tags} />
+        <TagsFilter
+          tags={tags}
+          activeTags={activeTags}
+          handleActiveTagsChange={handleActiveTagsChange}
+        />
         <ViewHandler
           handleListViewClick={handleListViewClick}
           handleGridViewClick={handleGridViewClick}

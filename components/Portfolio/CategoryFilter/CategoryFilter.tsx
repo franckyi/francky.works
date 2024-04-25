@@ -42,6 +42,7 @@ type CategoryFilterProps = { works: Work[]; tags: Tag[] };
 export default function CategoryFilter({ works, tags }: CategoryFilterProps) {
   const [value, setValue] = React.useState(0);
   const [filteredWorks, setFilteredWorks] = React.useState(works);
+  const [activeTags, setActiveTags] = React.useState([]);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -53,6 +54,10 @@ export default function CategoryFilter({ works, tags }: CategoryFilterProps) {
       );
       setFilteredWorks(filteredObjects);
     }
+  };
+
+  const handleActiveTagsChange = (id: number) => {
+    console.log("Active tags changed", id);
   };
 
   return (
@@ -77,7 +82,12 @@ export default function CategoryFilter({ works, tags }: CategoryFilterProps) {
       {categories.map((category) => {
         return (
           <CustomTabPanel key={category.id} value={value} index={category.id}>
-            <Works works={filteredWorks} tags={tags} />
+            <Works
+              works={filteredWorks}
+              tags={tags}
+              activeTags={activeTags}
+              handleActiveTagsChange={handleActiveTagsChange}
+            />
           </CustomTabPanel>
         );
       })}
