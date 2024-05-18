@@ -32,8 +32,8 @@ export default function Works({
       <Stack direction="row" spacing={1}>
         <TagsFilter
           tags={tags}
-          activeTags={activeTags}
           handleActiveTagsChange={handleActiveTagsChange}
+          activeTags={activeTags}
           activeTagsLength={activeTags.length}
         />
         <ViewHandler

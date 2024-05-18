@@ -24,7 +24,6 @@ export default function WorkModal({
   const handleOpen = () => setOpen(true);
 
   const handleClose = () => {
-    console.log('closed');
     setOpen(false);
     handleMouseLeave();
   };
