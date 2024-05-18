@@ -3,6 +3,8 @@ import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import { Tag } from "@/types/Tag";
 import Avatar from "@mui/material/Avatar";
+import { useContext } from "react";
+import ThemeContext from "@/context-api/ThemeContext";
 
 const chipClasses = "text-dark dark:text-light";
 
@@ -17,6 +19,9 @@ export default function TagsFilter({
   activeTags,
   handleActiveTagsChange,
 }: TagsFilterProps) {
+  const theme = useContext(ThemeContext);
+  const folderName = theme ? "icons-light" : "icons-dark";
+
   return (
     <Stack direction="row" flexWrap={"wrap"} spacing={1} gap={1}>
       {tags.map((tag) => {
@@ -36,7 +41,10 @@ export default function TagsFilter({
             onClick={() => handleActiveTagsChange(tag.id)}
             key={tag.id}
             avatar={
-              <Avatar alt={tag.name} src={`/img/icons/${fileName}.svg`} />
+              <Avatar
+                alt={tag.name}
+                src={`/img/${folderName}/${fileName}.svg`}
+              />
             }
             label={tag.name}
             className={chipClasses}
