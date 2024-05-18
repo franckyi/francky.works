@@ -17,19 +17,13 @@ export default function WorkItem({ work, view }: WorkItemProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   function handleMouseEnter() {
-    console.log("called handleHidden");
     if (view === "grid") {
       setHidden(false);
       setIsModalOpen(true);
     }
-    // else if (view === 'grid' && !isModalOpen) {
-    //   setHidden(!hidden);
-    //   setIsModalOpen(!isModalOpen);
-    // }
   }
 
   function handleMouseLeave() {
-    console.log("called handleMouseLeave");
     if (view === "grid") {
       setHidden(true);
       setIsModalOpen(false);
