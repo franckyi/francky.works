@@ -5,15 +5,16 @@ interface Link {
 }
 
 export const menuItems: Link[] = [
-  { name: "GitHub", url: "https://github.com/franckyrj", target: "_blank" },
+  { name: "GitHub", url: "https://github.com/franckyrnj", target: "_blank" },
+  { name: "Behance", url: "https://www.behance.net/francky", target: "_blank" },
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/franckyrj",
+    url: "https://www.linkedin.com/in/franckyrnj",
     target: "_blank",
   },
   {
     name: "v.2022",
-    url: "https://franckyrj.github.io/my-portfolio-website-v2022/",
+    url: "https://franckyrnj.github.io/my-portfolio-website-v2022/",
     target: "_blank",
   },
 ];
