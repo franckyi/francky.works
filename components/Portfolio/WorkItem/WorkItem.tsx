@@ -14,10 +14,25 @@ type WorkItemProps = { work: Work; view: string };
 
 export default function WorkItem({ work, view }: WorkItemProps) {
   const [hidden, setHidden] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  function handleHidden() {
+  function handleMouseEnter() {
+    console.log("called handleHidden");
     if (view === "grid") {
-      setHidden(!hidden);
+      setHidden(false);
+      setIsModalOpen(true);
+    }
+    // else if (view === 'grid' && !isModalOpen) {
+    //   setHidden(!hidden);
+    //   setIsModalOpen(!isModalOpen);
+    // }
+  }
+
+  function handleMouseLeave() {
+    console.log("called handleMouseLeave");
+    if (view === "grid") {
+      setHidden(true);
+      setIsModalOpen(false);
     }
   }
 
@@ -26,8 +41,8 @@ export default function WorkItem({ work, view }: WorkItemProps) {
       className={`${workItemClasses} ${
         view === "grid" ? "lg:w-[360px] lg:my-4" : "lg:my-24"
       }`}
-      onMouseEnter={handleHidden}
-      onMouseLeave={handleHidden}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <Thumbnail
         href={work._links["wp:featuredmedia"][0].href}
@@ -35,7 +50,7 @@ export default function WorkItem({ work, view }: WorkItemProps) {
         view={view}
         hidden={hidden}
       />
-      {view === "grid" && (
+      {isModalOpen && (
         <div
           className={`max-md:mt-4 lg:absolute lg:p-4 ${hidden ? "hidden" : ""}`}
         >
@@ -43,7 +58,7 @@ export default function WorkItem({ work, view }: WorkItemProps) {
             title={work.title.rendered}
             subTitle={work.meta.subtitle}
             desc={work.content.rendered}
-            handleHidden={handleHidden}
+            handleMouseLeave={handleMouseLeave}
           />
           <WorkLinks meta={work.meta} buttonColor="primary" />
         </div>

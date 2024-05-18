@@ -9,21 +9,24 @@ type WorkModalProps = {
   title: string;
   subTitle: string;
   desc: string;
-  handleHidden: () => void;
+  handleMouseLeave: () => void;
 };
 
 export default function WorkModal({
   title,
   subTitle,
   desc,
-  handleHidden,
+  handleMouseLeave,
 }: WorkModalProps) {
   const description = parse(desc);
   const [open, setOpen] = React.useState(false);
+
   const handleOpen = () => setOpen(true);
+
   const handleClose = () => {
+    console.log('closed');
     setOpen(false);
-    handleHidden();
+    handleMouseLeave();
   };
 
   return (

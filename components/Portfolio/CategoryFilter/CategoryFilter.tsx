@@ -46,6 +46,7 @@ export default function CategoryFilter({ works, tags }: CategoryFilterProps) {
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
+
     if (newValue === 0) {
       setFilteredWorks(works);
     } else {
