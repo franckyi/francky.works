@@ -1,97 +1,108 @@
-"use client";
 import * as React from "react";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Box from "@mui/material/Box";
+
 import Works from "../Works";
 import { Work } from "@/types/Work";
 import { Tag } from "@/types/Tag";
-import { categories } from "./categories";
+import { useEffect, useState } from "react";
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 
-interface TabPanelProps {
-  children?: React.ReactNode;
-  index: number;
-  value: number;
-}
+type CategoryFilterProps = {
+  works: Work[];
+  tags: Tag[];
+  handleTagsChange: (tags: number[]) => void;
+  handleCategoryChange: (categories: string) => void;
+};
 
-function CustomTabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
+export default function CategoryFilter({
+  works,
+  tags,
+  handleTagsChange,
+  handleCategoryChange,
+}: CategoryFilterProps) {
+  const [activeTags, setActiveTags] = useState<number[]>([]);
+  const [alignment, setAlignment] = React.useState("48");
 
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
-    </div>
-  );
-}
-
-function a11yProps(index: number) {
-  return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
+  const handleChange = (
+    event: React.MouseEvent<HTMLElement>,
+    newAlignment: string
+  ) => {
+    setAlignment(newAlignment);
   };
-}
 
-type CategoryFilterProps = { works: Work[]; tags: Tag[] };
+  useEffect(() => {
+    handleTagsChange(activeTags);
+  }, [activeTags, handleTagsChange]);
 
-export default function CategoryFilter({ works, tags }: CategoryFilterProps) {
-  const [value, setValue] = React.useState(0);
-  const [filteredWorks, setFilteredWorks] = React.useState(works);
-  const [activeTags, setActiveTags] = React.useState([]);
+  useEffect(() => {
+    handleCategoryChange(alignment);
+  }, [alignment, handleCategoryChange]);
 
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-
-    if (newValue === 0) {
-      setFilteredWorks(works);
+  function handleActiveTagsChange(id: number | null) {
+    if (id !== null && activeTags.includes(id)) {
+      setActiveTags(activeTags.filter((tag) => tag !== id));
+    } else if (id !== null) {
+      setActiveTags([...activeTags, id]);
     } else {
-      const filteredObjects = works.filter((work) =>
-        work.categories.includes(categories[newValue].wp_cat)
-      );
-      setFilteredWorks(filteredObjects);
+      setActiveTags([]);
     }
-  };
-
-  const handleActiveTagsChange = (id: number) => {
-    console.log("Active tags changed", id);
-  };
+  }
 
   return (
     <>
-      <Tabs
-        value={value}
+      <ToggleButtonGroup
+        color="primary"
+        value={alignment}
+        exclusive
         onChange={handleChange}
-        aria-label="basic tabs example"
+        aria-label="Platform"
+        className="mb-8"
       >
-        {categories.map((category) => {
-          return (
-            <Tab
-              className="text-dark dark:text-light"
-              key={category.id}
-              label={category.label}
-              {...a11yProps(category.id)}
-            />
-          );
-        })}
-      </Tabs>
+        <ToggleButton
+          className="dark:text-light dark:border-2 dark:border-medium"
+          value="48"
+        >
+          All
+        </ToggleButton>
+        <ToggleButton
+          className="dark:text-light dark:border-2 dark:border-medium"
+          value="8"
+        >
+          Web Development
+        </ToggleButton>
+        <ToggleButton
+          className="dark:text-light dark:border-2 dark:border-medium"
+          value="7"
+        >
+          UI/UX
+        </ToggleButton>
+        <ToggleButton
+          className="dark:text-light dark:border-2 dark:border-medium"
+          value="39"
+        >
+          Graphics
+        </ToggleButton>
+        <ToggleButton
+          className="dark:text-light dark:border-2 dark:border-medium"
+          value="46"
+        >
+          Plugins
+        </ToggleButton>
+        <ToggleButton
+          className="dark:text-light dark:border-2 dark:border-medium"
+          value="38"
+        >
+          Mini Projects
+        </ToggleButton>
+      </ToggleButtonGroup>
 
-      {categories.map((category) => {
-        return (
-          <CustomTabPanel key={category.id} value={value} index={category.id}>
-            <Works
-              works={filteredWorks}
-              tags={tags}
-              activeTags={activeTags}
-              handleActiveTagsChange={handleActiveTagsChange}
-            />
-          </CustomTabPanel>
-        );
-      })}
+      <Works
+        works={works}
+        tags={tags}
+        activeTags={activeTags}
+        handleActiveTagsChange={handleActiveTagsChange}
+        activeTagsLength={activeTags.length}
+      />
     </>
   );
 }

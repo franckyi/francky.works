@@ -5,54 +5,76 @@ import { Tag } from "@/types/Tag";
 import Avatar from "@mui/material/Avatar";
 import { useContext } from "react";
 import ThemeContext from "@/context-api/ThemeContext";
+import Button from "@mui/material/Button";
+import ClearIcon from "@mui/icons-material/Clear";
 
 const chipClasses = "text-dark dark:text-light";
 
 type TagsFilterProps = {
   tags: Tag[];
+  handleActiveTagsChange: (arg0: number | null) => void;
+  activeTagsLength: number;
   activeTags: number[];
-  handleActiveTagsChange: (arg0: number) => void;
 };
 
 export default function TagsFilter({
   tags,
-  activeTags,
   handleActiveTagsChange,
+  activeTagsLength,
+  activeTags,
 }: TagsFilterProps) {
   const theme = useContext(ThemeContext);
   const folderName = theme ? "icons-light" : "icons-dark";
 
-  return (
-    <Stack direction="row" flexWrap={"wrap"} spacing={1} gap={1}>
-      {tags.map((tag) => {
-        let fileName = tag.slug.includes("adobe")
-          ? "adobe"
-          : tag.slug.includes("affinity")
-          ? "affinity"
-          : tag.slug.includes("wordpress") ||
-            tag.slug.includes("woo") ||
-            tag.slug.includes("headless")
-          ? "wordpress"
-          : tag.slug;
+  function handleResetTags() {
+    handleActiveTagsChange(null);
+  }
 
-        return (
-          <Chip
-            clickable
-            onClick={() => handleActiveTagsChange(tag.id)}
-            key={tag.id}
-            avatar={
-              <Avatar
-                alt={tag.name}
-                src={`/img/${folderName}/${fileName}.svg`}
-              />
-            }
-            label={tag.name}
-            className={chipClasses}
-            variant="outlined"
-            size="small"
-          />
-        );
-      })}
-    </Stack>
+  return (
+    <div>
+      <Stack direction="row" flexWrap={"wrap"} spacing={1} gap={1}>
+        {tags.map((tag) => {
+          let fileName = tag.slug.includes("adobe")
+            ? "adobe"
+            : tag.slug.includes("affinity")
+            ? "affinity"
+            : tag.slug.includes("wordpress") ||
+              tag.slug.includes("woo") ||
+              tag.slug.includes("headless")
+            ? "wordpress"
+            : tag.slug;
+
+          return (
+            <Chip
+              clickable
+              onClick={() => handleActiveTagsChange(tag.id)}
+              key={tag.id}
+              avatar={
+                <Avatar
+                  alt={tag.name}
+                  src={`/img/${folderName}/${fileName}.svg`}
+                />
+              }
+              label={tag.name}
+              className={chipClasses}
+              // variant="outlined"
+              variant={activeTags.includes(tag.id) ? "filled" : "outlined"}
+              size="small"
+              color={activeTags.includes(tag.id) ? "secondary" : "default"}
+            />
+          );
+        })}
+      </Stack>
+      {activeTagsLength > 0 && (
+        <Button
+          className="mt-2 rounded-full"
+          onClick={() => handleResetTags()}
+          variant="outlined"
+          startIcon={<ClearIcon />}
+        >
+          Reset filters
+        </Button>
+      )}
+    </div>
   );
 }

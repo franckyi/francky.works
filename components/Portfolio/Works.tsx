@@ -1,4 +1,3 @@
-"use client";
 import { Work } from "@/types/Work";
 import ViewHandler from "./ViewHandler";
 import { useState } from "react";
@@ -13,7 +12,8 @@ type WorkProps = {
   works: Work[];
   tags: Tag[];
   activeTags: number[];
-  handleActiveTagsChange: (arg0: number) => void;
+  handleActiveTagsChange: (arg0: number | null) => void;
+  activeTagsLength: number;
 };
 
 export default function Works({
@@ -21,6 +21,7 @@ export default function Works({
   tags,
   activeTags,
   handleActiveTagsChange,
+  activeTagsLength,
 }: WorkProps) {
   const [view, setView] = useState("list");
   const handleListViewClick = () => setView("list");
@@ -31,8 +32,9 @@ export default function Works({
       <Stack direction="row" spacing={1}>
         <TagsFilter
           tags={tags}
-          activeTags={activeTags}
           handleActiveTagsChange={handleActiveTagsChange}
+          activeTags={activeTags}
+          activeTagsLength={activeTags.length}
         />
         <ViewHandler
           handleListViewClick={handleListViewClick}
@@ -46,6 +48,8 @@ export default function Works({
             : "max-w-screen-xl lg:gap-4"
         }`}
       >
+        {works.length === 0 && <p>No works matching current search filters.</p>}
+
         {works.map((work: Work) => {
           return <WorkItem key={work.id} work={work} view={view} />;
         })}
