@@ -10,7 +10,7 @@ type AppBarProps = {
 
 export default function AppBar({ toggleTheme }: AppBarProps) {
   return (
-    <header className="flex w-full justify-between pt-4 pb-8 lg:px-8">
+    <header className="p-4 flex w-full justify-between pt-4 pb-8 lg:px-8">
       <button type="button" onClick={toggleTheme} title="toggle theme">
         <ThemeToggle />
       </button>

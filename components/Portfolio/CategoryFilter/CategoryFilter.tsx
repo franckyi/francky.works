@@ -51,12 +51,12 @@ export default function CategoryFilter({
   return (
     <>
       <ToggleButtonGroup
-        color="primary"
+        color="secondary"
         value={alignment}
         exclusive
         onChange={handleChange}
         aria-label="Platform"
-        className="mb-8"
+        className="mb-8 flex-wrap justify-center gap-2 lg:gap-0"
       >
         <ToggleButton
           className="dark:text-light dark:border-2 dark:border-medium"
