@@ -32,7 +32,13 @@ export default function TagsFilter({
 
   return (
     <div>
-      <Stack direction="row" flexWrap={"wrap"} spacing={1} gap={1}>
+      <Stack
+        className="max-w-screen-xl"
+        direction="row"
+        flexWrap={"wrap"}
+        spacing={1}
+        gap={1}
+      >
         {tags.map((tag) => {
           let fileName = tag.slug.includes("adobe")
             ? "adobe"

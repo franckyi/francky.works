@@ -9,7 +9,7 @@ import { Tag } from "@/types/Tag";
 const heading = {
   text: "Works",
   classes:
-    "lg:mt-32 my-8 text-3xl lg:text-5xl font-bold text-primary text-center font-secondary",
+    "max-w-screen-xl mx-auto lg:mt-32 my-8 text-3xl lg:text-5xl font-bold text-primary text-center font-secondary",
 };
 
 export default function Portfolio() {

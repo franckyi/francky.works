@@ -49,14 +49,14 @@ export default function CategoryFilter({
   }
 
   return (
-    <>
+    <div className="max-w-screen-xl mx-auto">
       <ToggleButtonGroup
         color="secondary"
         value={alignment}
         exclusive
         onChange={handleChange}
         aria-label="Platform"
-        className="mb-8 flex-wrap justify-center gap-2 lg:gap-0"
+        className="mb-8 gap-2 lg:gap-0"
       >
         <ToggleButton
           className="dark:text-light dark:border-2 dark:border-medium"
@@ -103,6 +103,6 @@ export default function CategoryFilter({
         handleActiveTagsChange={handleActiveTagsChange}
         activeTagsLength={activeTags.length}
       />
-    </>
+    </div>
   );
 }

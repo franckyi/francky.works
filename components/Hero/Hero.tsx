@@ -8,7 +8,7 @@ export default async function Hero() {
   const bio = await getBio();
 
   return (
-    <section className="lg:mx-40 xl:mx-80 flex gap-8 lg:gap-16 flex-col lg:flex-row lg:items-center justify-center">
+    <section className="max-w-screen-xl mx-auto flex gap-8 lg:gap-16 flex-col lg:flex-row lg:items-center justify-center">
       <Image
         src="/img/hero.webp"
         className="avatar-shape"
